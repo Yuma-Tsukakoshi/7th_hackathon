@@ -1,1 +1,4 @@
-# posse1-hackathon-202309-team3C
+# good-new-shareapp
+
+docker compose exec -it db /bin/bash
+mysql -u root -p < docker-entrypoint-initdb.d/init.sql

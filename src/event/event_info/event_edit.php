@@ -4,7 +4,6 @@ require_once(dirname(__FILE__) . '/../../dbconnect.php');
 require_once(dirname(__FILE__) . '/../../admin/invalid_count.php');
 require_once(dirname(__FILE__) . '/../../admin/invalid_exam_count.php');
 
-$pdo = Database::get();
 $sql = "SELECT * FROM users INNER JOIN user_register_client as relation  ON relation.user_id = users.id WHERE id = :id ";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(":id", $_REQUEST["id"]);

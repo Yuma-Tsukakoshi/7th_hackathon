@@ -12,7 +12,6 @@ require_once(dirname(__FILE__) . '/../dbconnect.php');
 $sql = "SELECT * FROM good_new INNER JOIN users ON good_new.user_id = users.id WHERE good_new.exist = 1";
 $posts = $pdo->query($sql)->fetchAll();
 
-
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +29,7 @@ $posts = $pdo->query($sql)->fetchAll();
 <body>
   <div class="flex h-screen bg-gray-50" :class="{ 'overflow-hidden': isSideMenuOpen}">
 
-    <?php include_once(dirname(__FILE__) . '/../components/aside.php'); ?>
+    <!-- <?php include_once(dirname(__FILE__) . '/../components/aside.php'); ?> -->
 
     <div class="flex flex-col flex-1 w-full">
       <main class="h-full pb-16 overflow-y-auto">

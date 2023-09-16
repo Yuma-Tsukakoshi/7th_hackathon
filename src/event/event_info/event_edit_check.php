@@ -1,6 +1,5 @@
 <?php
 require_once(dirname(__FILE__) . '/../../dbconnect.php');
-$pdo = Database::get();
 
 $sql = "UPDATE users SET 
 name=:name,hurigana =:hurigana ,sex =:sex, birthday=:birthday,mail=:mail,phone =:phone,prefecture =:prefecture,college =:college,

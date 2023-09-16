@@ -6,7 +6,6 @@ require_once(dirname(__FILE__) . '/../../dbconnect.php');
 require_once(dirname(__FILE__) . '/../../admin/invalid_count.php');
 require_once(dirname(__FILE__) . '/../../admin/invalid_exam_count.php');
 
-$pdo = Database::get();
 $sql1 = "SELECT * FROM users WHERE id = :id ";
 $stmt1 = $pdo->prepare($sql1);
 $stmt1->bindValue(":id", $_REQUEST["id"]);

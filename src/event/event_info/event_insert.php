@@ -3,7 +3,6 @@ require_once(dirname(__FILE__) . './../../dbconnect.php');
 
 session_start();
 
-$pdo = Database::get();
 $idList = array();
 $agentsAll = $_SESSION['clients'];
 if (isset($agentsAll)) {

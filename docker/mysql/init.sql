@@ -7,7 +7,7 @@ CREATE TABLE users(
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255) COMMENT "名前",
   kisei VARCHAR(255) COMMENT "期生",
-  image  VARCHAR(255) COMMENT "写真", -- Assuming you store images as BLOB data
+  image  VARCHAR(255) COMMENT "写真",
   tate VARCHAR(255) COMMENT "縦もく",
   yoko VARCHAR(255) COMMENT "横もく",
   brosis VARCHAR(255) COMMENT "ブラシス",

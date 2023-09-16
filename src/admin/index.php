@@ -9,7 +9,6 @@ session_start();
 
 require_once(dirname(__FILE__) . '/../dbconnect.php');
 
-$pdo = Database::get();
 $sql = "SELECT * FROM good_new INNER JOIN users ON good_new.user_id = users.id WHERE good_new.exist = 1";
 $posts = $pdo->query($sql)->fetchAll();
 

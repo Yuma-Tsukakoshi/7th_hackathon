@@ -1,7 +1,7 @@
 <?php
 require_once(dirname(__FILE__) . '/../dbconnect.php');
 
-$uid = $_POST['uid'];
+$uid = $_SESSION['user_id'];
 $eid = $_POST['eid'];
 
 

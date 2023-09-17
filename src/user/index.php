@@ -41,6 +41,7 @@ session_start();
         </div>
       </div>
     </section>
+    
     <section class="change_tab_container">
     </section>
     <section class="member_status_container">
@@ -78,6 +79,7 @@ session_start();
 </div>
       </div>
     </section>
+
     <!-- カレンダー -->
     <section class="calendar-section">
       <div class="calendar open-calendar" id="show-calendar">

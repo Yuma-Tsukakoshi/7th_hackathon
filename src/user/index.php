@@ -1,5 +1,9 @@
 <?php
-session_start();
+require_once(dirname(__FILE__) . '../../dbconnect.php');
+
+$sql = "SELECT id,name,kisei,image FROM users WHERE user_exist = 1";
+$posts = $pdo->query($sql)->fetchAll();
+
 ?>
 
 <!-- イントロページ作成場所 フロント -->
@@ -49,24 +53,25 @@ session_start();
       <div class="younger_members">
         <h1>3期生</h1>
         <div class="wrap slide-paused" ontouchstart="">
-          <ul class="icon_slide">
-            <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_1.jpg" alt="">3.0 木村宥哉<div class="anchor_img"></div>/li>
-            <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_2.jpg" alt="">3.5 鈴木大騎</li>
-            <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_3.jpg" alt="">3.0 平手美羽</li>
-            <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_4.jpg" alt="">3.0 岩城和輝</li>
-          </ul>
-          <ul class="icon_slide">
-            <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_5.jpg" alt="">3.5 森はるか</li>
-            <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_6.jpg" alt="">3.0 小野媛乃</li>
-            <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_7.jpg" alt="">3.0 井上岳</li>
-            <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_8.jpg" alt="">3.0 野呂美智子</li>
-          </ul>
-          <ul class="icon_slide">
-            <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_9.jpg" alt="">3.0 塚越雄真</li>
-            <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_10.jpg" alt="">3.0 神野豪気</li>
-            <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_11.jpg" alt="">3.0 上野侑紗</li>
-            <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_12.jpg" alt="">3.5 辻健世</li>
-          </ul>
+<?php
+$items = $posts; // $posts は要素の配列と仮定
+
+// 4つずつ要素をグループ化する
+$groupedItems = array_chunk($items, 4);
+
+foreach ($groupedItems as $group) {
+    echo '<ul class="icon_slide">';
+    
+    foreach ($group as $post) {
+        echo '<li class="content"><img src="' . $post['image'] . '" alt="">';
+        echo $post['kisei'] . ' ' . $post['name'];
+        echo '<div class="anchor_img"></div></li>';
+    }
+    
+    echo '</ul>';
+}
+?>
+
         </div>
         <div class="wave">
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300">

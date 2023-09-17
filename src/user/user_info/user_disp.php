@@ -15,11 +15,14 @@ $stmt->bindParam(':cookie_id', $cookie_id, PDO::PARAM_INT);
 $stmt->execute();
 $count = $stmt->fetchColumn();
 
-if($count>0){
-  $string='フォロー済み';
-}else{
-  $string='フォロー';
-};
+
+if ($count > 0) {
+  // フォロー済みの場合
+  $followButton = '<button type="button" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 follow">フォロー済み</button>';
+} else {
+  // 未フォローの場合
+  $followButton = '<a href="./user_follow.php?get_id=' . $get_id . '&cookie_id=' . $cookie_id . '"><button type="button" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 follow">フォロー</button></a>';
+}
 
 ?>
 
@@ -40,7 +43,7 @@ if($count>0){
 
 <body>
 
-<a href="./">
+<a href="../../user/index.php">
       <div class="p-header__logos items-center">
         <div class="p-header__header-name profile"> <i class="fa-solid fa-arrow-left"></i>プロフィール</div>
       </div>
@@ -50,13 +53,10 @@ if($count>0){
     <!-- webサイト名、ロゴ -->
     
   <!-- </header> -->
-<?php 
+<?php if ($get_id != $cookie_id) { ?>
 
-if ($get_id != $cookie_id) { ?>
-<button type="button" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 follow">
-  <?= $string ?>
+  <?= $followButton; ?>
 
-</button>
 <?php } ?> 
 
   <div class="">

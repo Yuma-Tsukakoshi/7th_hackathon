@@ -1,3 +1,7 @@
+body {
+    overflow: hidden;
+}
+
 /* ヘッダー */
 header {
     height: 75px;
@@ -85,7 +89,7 @@ header {
 
 /* ハンバーガーメニュー一覧 */
 .Menu {
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100vw;

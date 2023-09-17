@@ -130,12 +130,13 @@ button {
 
 .upbar-section__nav__attend {
 	width: 50%;
+	border-bottom: 0.3rem solid #0074BB;
 }
 
 
 .status-section__nav__status {
 	width: 50%;
-	border-bottom: 0.3rem solid #0074BB;
+	border-bottom: 0.3rem solid #ffffff;
 }
 
 .upbar-section__nav__attend__link {

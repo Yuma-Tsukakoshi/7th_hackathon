@@ -126,11 +126,11 @@ header {
 }
 
 .Menu-Group {
-    visibility: hidden;
+    display: none;
 }
 
 .Menu-Group.active {
-    visibility: visible;
+    display: block;
     position: fixed;
     top: 0;
     right: 0;

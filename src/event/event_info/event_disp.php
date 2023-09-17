@@ -18,7 +18,7 @@ $stmt2->bindValue(":id", $_REQUEST["id"]);
 $stmt2->execute();
 $agents = $stmt2->fetchAll();
 ?>
-
+e
 <!DOCTYPE html>
 <html lang="ja">
 

@@ -1,8 +1,8 @@
-<!-- 参加可否登録ページ バックエンド -->
 <?php
-
 session_start();
+
 require_once(dirname(__FILE__) . '/../dbconnect.php');
+// $uid = $_SESSION['user_id'];
 
 
 //イベント情報の取得
@@ -66,7 +66,8 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                               <!-- <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /> -->
                             </svg>
                           </div>
-                          <button onclick="joinBtn(this)" data-uid="1" data-eid="<?=$event["id"]?>" class="px-2 py-1 font-semibold leading-tight text-blue-500 bg-green-100 rounded-full">
+                          <button onclick="joinBtn(this)" data-uid="<?= $_SESSION['user_id'] ?>" data-eid="<?= $event["id"] ?>" data-date="<?=$_GET['date']?>" class="
+                          px-2 py-1 font-semibold leading-tight text-blue-500 bg-green-100 rounded-full">
                             参加
                           </button>
                         </summary>
@@ -90,22 +91,24 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
     const Btn = $(button);
     const uid = Btn.attr('data-uid');
     const eid = Btn.attr('data-eid');
+    const date = Btn.attr('data-date');
 
-      $.ajax({
-        url: 'http://localhost:8080/services/participate_record.php',
-        type: 'POST',
-        data: {
-          uid: uid,
-          eid: eid
-        },
-        success: function(data) {
-          console.log(data);
-        },
-        error: function(xhr) {
-          console.error(xhr);
-        }
-      });
-    }
+    $.ajax({
+      url: 'http://localhost:8080/services/participate_record.php',
+      type: 'POST',
+      data: {
+        uid: uid,
+        eid: eid,
+        date: date
+      },
+      success: function(data) {
+        console.log(data);
+      },
+      error: function(xhr) {
+        console.error(xhr);
+      }
+    });
+  }
 </script>
 
 </html>

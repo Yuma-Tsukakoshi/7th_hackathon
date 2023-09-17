@@ -13,7 +13,7 @@ if (is_null($email)) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/output.css" />
+  <link href="../../vendor/tailwind/tailwind.output.css" rel="stylesheet">
   <title>パスワード設定画面</title>
 </head>
 
@@ -21,11 +21,11 @@ if (is_null($email)) {
   <div class="flex items-center justify-center min-h-screen bg-gray-100">
     <div class="w-full max-w-lg p-6 bg-white rounded-xl shadow-lg">
       <h1 class="text-2xl font-medium mb-5 text-center">パスワード設定画面</h1>
-      <?php if(isset($_SESSION['error_message'])) { ?>
+      <?php if (isset($_SESSION['error_message'])) { ?>
         <p class="text-xl text-red-600 mb-5"><?php echo $_SESSION['error_message']; ?></p>
         <?php unset($_SESSION['error_message']); ?>
       <?php } ?>
-      <form action="../services/signup.php?email=<?=$email?>" method="post">
+      <form action="../services/signup.php?email=<?= $email ?>" method="post">
         <div class="mb-4">
           <label class="block text-gray-700 font-medium mb-2" for="email">メールアドレス</label>
           <input class="border border-gray-400 p-2 w-full" type="email" id="email" name="email" value="<?= $email ?>" disabled>

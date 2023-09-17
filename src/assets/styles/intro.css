@@ -65,13 +65,13 @@ header {
 }
 
 /* ハンバーガーメニュークリック後のスタイル */
-/* .Menu.active {
-    transform: translateX(0);
-} */
-
 .Menu-CloseBtn.hamburger.active span:nth-child(1) {
     top: 5px;
     transform: rotate(45deg);
+}
+/* ボタンの位置を固定 */
+#js-menu-closebtn {
+    position: fixed;
 }
 
 .Menu-CloseBtn.hamburger.active span:nth-child(2) {
@@ -121,7 +121,7 @@ header {
 
 .Menu-Group.active {
     visibility: visible;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     width: 80vw;

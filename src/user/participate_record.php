@@ -12,10 +12,19 @@ require_once(dirname(__FILE__) . '/../dbconnect.php');
 //イベント情報の取得
 $sql = "SELECT * FROM event WHERE date = :date";
 $stmt = $pdo->prepare($sql);
-$stmt -> bindValue(':date', $_GET['date']);
+$timestamp = strtotime($_GET['date']);
+$formattedDate = date("Y-m-d", $timestamp);
+var_dump($formattedDate);
+$stmt -> bindValue(':date', $formattedDate,PDO::PARAM_STR);
+$stmt->execute();
 $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// var_dump($agents1);
+// $sql = "SELECT date FROM event WHERE date = '2023-09-20'";
+// $stmt = $pdo->prepare($sql);
+// $stmt->execute();
+// $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// var_dump($events);
 
 // if (!isset($_SESSION['id'])) {
 //     header('Location: http://localhost:8080/admin/boozer_auth/boozer_signup.php');
@@ -53,22 +62,17 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
               <table class="w-full whitespace-no-wrap">
                 <thead>
                   <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b">
-                    <th class="px-4 py-3">更新日時</th>
-                    <th class="px-4 py-3">企業名</th>
-                    <th class="px-4 py-3">掲載期間</th>
-                    <th class="px-4 py-3">登録状態</th>
-                    <th class="px-4 py-3">申請人数</th>
+                    <th class="px-4 py-3">イベント名</th>
+                    <th class="px-4 py-3">対象期生</th>
+                    <th class="px-4 py-3">実施時間</th>
                     <th class="px-4 py-3">操作</th>
                   </tr>
                 </thead>
-                <!-- <tbody class="bg-white divide-y">
-                  <?php foreach ($agents1 as $key => $agent) { ?>
+                <tbody class="bg-white divide-y">
+                  <?php foreach ($events as $key => $event) { ?>
                     <tr class="text-gray-700">
                       <td class="px-4 py-3">
-                        <p class="font-semibold items-center text-sm"><?= $agent["updated_at"] ?></p>
-                      </td>
-                      <td class="px-4 py-3">
-                        <p class="font-semibold items-center text-sm"><?= $agent["service_name"] ?></p>
+                        <p class="font-semibold items-center text-sm"><?= $event["updated_at"] ?></p>
                       </td>
                       <td class="px-4 py-3 text-sm">
                         <?= $agent["started_at"] ?> ~ <?= $agent["ended_at"] ?>
@@ -104,7 +108,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                       </td>
                     </tr>
                   <?php } ?>
-                </tbody> -->
+                </tbody>
               </table>
             </div>
           </div>

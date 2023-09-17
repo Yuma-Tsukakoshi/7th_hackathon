@@ -1,13 +1,9 @@
 <!-- 参加可否登録ページ バックエンド -->
 <?php
 
-// session_start();
+session_start();
 require_once(dirname(__FILE__) . '/../dbconnect.php');
 
-// 削除成功時 のメッセージ
-// if (isset($_GET['message']) && $_GET['message'] === 'deleted') {
-//   $message = "削除しました。";
-// }
 
 //イベント情報の取得
 $sql = "SELECT * FROM event WHERE date = :date";
@@ -15,17 +11,9 @@ $stmt = $pdo->prepare($sql);
 $timestamp = strtotime($_GET['date']);
 $formattedDate = date("Y-m-d", $timestamp);
 // var_dump($formattedDate);
-$stmt -> bindValue(':date', $formattedDate,PDO::PARAM_STR);
+$stmt->bindValue(':date', $formattedDate);
 $stmt->execute();
 $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-
-// $sql = "SELECT date FROM event WHERE date = '2023-09-20'";
-// $stmt = $pdo->prepare($sql);
-// $stmt->execute();
-// $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-// var_dump($events);
 
 // if (!isset($_SESSION['id'])) {
 //     header('Location: http://localhost:8080/admin/boozer_auth/boozer_signup.php');
@@ -55,65 +43,41 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
           <div class="w-full overflow-hidden rounded-lg shadow-xs">
             <h2 class="my-6 text-2xl font-semibold text-gray-700 "></h2>
             <span class="send_btn">
-              <!-- <a href="http://localhost:8080/admin/boozer_index_countstudents.php">
-                人数通知メールを各企業に送る
-              </a> -->
+              <a href="http://localhost:8080/user/index.php" class="send_btn">←戻る</a>
             </span>
-            <div class="w-full overflow-x-auto">
-              <table class="w-full whitespace-no-wrap">
-                <thead>
-                  <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b">
-                    <th class="px-4 py-3">イベント名</th>
-                    <th class="px-4 py-3">対象期生</th>
-                    <th class="px-4 py-3">実施時間</th>
-                    <th class="px-4 py-3">操作</th>
-                  </tr>
-                </thead>
-                <tbody class="bg-white divide-y">
-                  <?php foreach ($events as $key => $event) { ?>
-                    <tr class="text-gray-700">
-                      <td class="px-4 py-3">
-                        <p class="font-semibold items-center text-sm"><?= $event["title"] ?></p>
-                      </td>
-                      <td class="px-4 py-3">
-                        <p class="font-semibold items-center text-sm"><?= $event["kisei"] ?></p>
-                      </td>
-                      <td class="px-4 py-3 text-sm">
-                        <?= substr($event["start_time"], 0, 5); ?> ~ <?= substr($event["end_time"], 0, 5)?>
-                      </td>
-                      <td class="px-4 py-3 text-xs">
-                        <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full">
-                          参加
-                        </span>
-                      </td>
-                      <!-- <td class="px-4 py-3 text-sm">
-                        <?php
-                        $found = false;
-                        for ($i = 0; $i < count($agent_count); $i++) {
-                          if ($agent_count[$i]["client_id"] == $agent["client_id"]) {
-                            print_r($agent_count[$i]["sum"] . "人");
-                            $found = true;
-                            break;
-                          }
-                        }
-                        if (!$found) {
-                          print_r("0人");
-                        } ?>
-                      </td>
-                      <td class="px-4 py-3">
-                        <div class="flex items-center space-x-4 text-sm">
-                          <button class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-blue-500 rounded-lg focus:outline-none focus:shadow-outline-gray" aria-label="Edit" data=<?= $agent["client_id"] ?>>
-                            <a href="http://localhost:8080/agent/agent_info/agent_disp.php?id=<?= $agent["client_id"] ?>&exist=1">詳細</a>
+            <div class="mx-auto max-w-lg">
+              <div class="space-y-6">
+                <?php foreach ($events as $key => $event) { ?>
+                  <div class="mx-auto max-w-lg">
+                    <div class="space-y-6">
+                      <details class="group rounded-xl bg-white shadow-[0_10px_100px_10px_rgba(0,0,0,0.05)]">
+                        <summary class="flex cursor-pointer list-none items-center justify-between p-6 text-lg font-medium text-secondary-900">
+                          <div>
+                            <div>
+                              <?= $event["title"] ?>
+                              <?= $event["kisei"] ?>
+                            </div>
+                            <div class="">
+                              <?= substr($event["start_time"], 0, 5); ?> ~ <?= substr($event["end_time"], 0, 5) ?>
+                            </div>
+                          </div>
+                          <div class="text-secondary-500 px-2 py-1 font-semibold leading-tight">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="block h-5 w-5 transition-all duration-300 group-open:-rotate-90">
+                              <!-- <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /> -->
+                            </svg>
+                          </div>
+                          <button onclick="joinBtn(this)" data-uid="1" data-eid="<?=$event["id"]?>" class="px-2 py-1 font-semibold leading-tight text-blue-500 bg-green-100 rounded-full">
+                            参加
                           </button>
-                          <button class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-gray-500 rounded-lg focus:outline-none focus:shadow-outline-gray" aria-label="Edit" onclick="hideUser(this)">
-                            <a href="http://localhost:8080/admin/delete.php?id=<?= $agent["client_id"] ?>">削除</a>
-                          </button>
+                        </summary>
+                        <div class="px-6 pb-6 text-secondary-500">
+                          <h1></h1>
                         </div>
-                      </td> -->
-                    </tr>
-                  <?php } ?>
-                </tbody>
-              </table>
+                      </details>
+                    </div>
+                  </div>
+                <?php } ?>
+              </div>
             </div>
           </div>
         </div>
@@ -122,27 +86,26 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
   </div>
 </body>
 <script>
-  // function hideUser(button) {
-  //   const tr = $(button).closest('tr');
-  //   const id = tr.attr('data-id');
+  function joinBtn(button) {
+    const Btn = $(button);
+    const uid = Btn.attr('data-uid');
+    const eid = Btn.attr('data-eid');
 
-  //   if (confirm('本当に削除しますか？')) {
-  //     $.ajax({
-  //       url: 'http://localhost:8080/admin/delete.php',
-  //       type: 'POST',
-  //       data: {
-  //         id: id
-  //       },
-  //       success: function(data) {
-  //         console.log(data);
-  //         tr.addClass('hidden');
-  //       },
-  //       error: function(xhr) {
-  //         console.error(xhr);
-  //       }
-  //     });
-  //   }
-  // }
+      $.ajax({
+        url: 'http://localhost:8080/services/participate_record.php',
+        type: 'POST',
+        data: {
+          uid: uid,
+          eid: eid
+        },
+        success: function(data) {
+          console.log(data);
+        },
+        error: function(xhr) {
+          console.error(xhr);
+        }
+      });
+    }
 </script>
 
 </html>

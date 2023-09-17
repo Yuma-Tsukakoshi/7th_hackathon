@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once(dirname(__FILE__) . '/../dbconnect.php');
 
 $uid = $_SESSION['user_id'];

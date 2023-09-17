@@ -64,7 +64,7 @@ $post = $stmt->fetch(PDO::FETCH_ASSOC);
 
     </div>
     <div class="attend_button">
-      <label><button class="attend_btn" onclick="discord()"><b>入室する</b></button><br></label>
+      <label><button class="attend_btn" onclick="discord()"><b>入室</b></button><br></label>
     </div>
   </div>
 </body>

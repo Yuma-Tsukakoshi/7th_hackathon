@@ -1,4 +1,16 @@
 <?php
+require_once(dirname(__FILE__) . '/../dbconnect.php');
+$sql = "SELECT * FROM user_visit_log WHERE user_id = :id AND date = :date";
+$stmt = $pdo->prepare($sql);
+$stmt->bindValue(':id', $_COOKIE['user_id']);
+
+$date = new DateTime('now');
+$stmt->bindValue(':date', $date->format('Y年m月d日 H時i分s秒'));
+$stmt->execute();
+$post = $stmt->fetch(PDO::FETCH_ASSOC);
+
+// var_dump($post);
+
 
 function send_to_discord($message)
 {
@@ -16,10 +28,16 @@ function send_to_discord($message)
   return $response === 'ok'; //$responseの値がokならtrueを返す
 }
 
+// if(){
+//   $status = '入室';
+// }else{
+//   $status = '退室'; 
+// }
+
 //メッセージの内容を定義
 $message = array(
   'username' => 'harbors',
-  'content' => '塚越雄真さんが入出しました', //Discordの場合
+  'content' => $name+'さんが'+ $status +'しました', 
 );
 
 //メッセージを送信

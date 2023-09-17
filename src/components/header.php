@@ -13,7 +13,7 @@
     </a>
     <div class="p-header__status" id="js-header_status">
         <!-- ステータス「入室中」「退室中」 -->
-        入室中
+        <span id="js-header_statusText"></span>
     </div>
 </header>
 <!-- ハンバーガーボタン -->
@@ -26,7 +26,7 @@
 <nav class="Menu" id="js-menulist">
     <ul class="Menu-Group" id="js-Menu-Group">
         <li class="Menu-Group-Item">
-            <a class="Menu-Group-Item-Link" href="">
+            <a class="Menu-Group-Item-Link" href="../user/event_list.php">
                 <span>イベント・予約一覧</span>
             </a>
         </li>

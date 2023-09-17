@@ -12,8 +12,8 @@
   const config = {
       show: 1,
   }
-  const changeYearMonth = document.getElementById('js-changeMonth')
-  changeYearMonth.innerHTML = thisyear + '年' + (thismonth+1) + '月'
+  // const changeYearMonth = document.getElementById('js-changeMonth')
+  // changeYearMonth.innerHTML = thisyear + '年' + (thismonth+1) + '月'
 
   function showCalendar(year, month) {
       for (let i = 0; i < config.show; i++) {
@@ -21,8 +21,8 @@
           const sec = document.createElement('section')
           sec.innerHTML = calendarHtml
           document.querySelector('#calendar').appendChild(sec)
-          changeYearMonth.innerHTML = year + '年' + month + '月'
-          month++
+          // changeYearMonth.innerHTML = year + '年' + month + '月'
+          // month++
           if (month > 12) {
               year++
               month = 1
@@ -77,8 +77,8 @@
     return `${year}年${String(month + 1).padStart(2, '0')}月${date}日`;
   }
 
-  const inputStudyDay = document.getElementById('studyDay-modalButton')
-  inputStudyDay.value = setStudyDay()
+  // const inputStudyDay = document.getElementById('studyDay-modalButton')
+  // inputStudyDay.value = setStudyDay()
   
   
   function moveCalendar(e) {
@@ -114,14 +114,14 @@
       }
       showCalendar(year, month)
   }
-  document.querySelector('#prev').addEventListener('click', moveCalendar)
-  document.querySelector('#next').addEventListener('click', moveCalendar)
-  document.querySelector('#prev').addEventListener('click', setSelectedDay)
-  document.querySelector('#next').addEventListener('click', setSelectedDay)
-  document.querySelector('#prev-f').addEventListener('click', moveCalendar)
-  document.querySelector('#next-f').addEventListener('click', moveCalendar)
-  document.querySelector('#prev-f').addEventListener('click', setSelectedDay)
-  document.querySelector('#next-f').addEventListener('click', setSelectedDay)
+  // document.querySelector('#prev').addEventListener('click', moveCalendar)
+  // document.querySelector('#next').addEventListener('click', moveCalendar)
+  // document.querySelector('#prev').addEventListener('click', setSelectedDay)
+  // document.querySelector('#next').addEventListener('click', setSelectedDay)
+  // document.querySelector('#prev-f').addEventListener('click', moveCalendar)
+  // document.querySelector('#next-f').addEventListener('click', moveCalendar)
+  // document.querySelector('#prev-f').addEventListener('click', setSelectedDay)
+  // document.querySelector('#next-f').addEventListener('click', setSelectedDay)
 
   showCalendar(year, month)
 
@@ -153,7 +153,6 @@
     const getDate = document.querySelectorAll('.is-today,.is-disabled')
     // 取得した日にちでループを回す
     getDate.forEach(Selectable => {
-        console.log(1)
         Selectable.addEventListener('click', (e) => { 
         // is-selectedというclassをもつSelectableを取得する
         const selectedDate = document.querySelector('.is-selected')
@@ -164,7 +163,7 @@
         // clickされたSelectableにis-selectedというclassを追加する
         Selectable.classList.add('is-selected')
         // 学習日を更新する
-        inputStudyDay.value = setStudyDay(day=e.target.textContent,year,month-1)
+        // inputStudyDay.value = setStudyDay(day=e.target.textContent,year,month-1)
       })
     })
   }

@@ -1,0 +1,85 @@
+.calendar-title{
+  text-align: center;
+  position: relative;
+}
+#calendar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+section {
+  margin: 10px;
+}
+h1 {
+  font-size: 18px;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+td {
+  padding: 12px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  width: 30px;
+  height: 30px;
+}
+.date{
+  color: #6ba0f0;
+  font-weight: bold;
+}
+.is-transparency{
+  opacity: 0;
+}
+.is-disabled {
+  color: #ccc;
+  font-weight: bold;
+  cursor: pointer;
+}
+.is-today{
+  cursor: pointer;
+  font-weight: bold;
+}
+.is-available {
+  font-weight: bold;
+}
+.is-selected{
+  background-color: #0074BB;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+.decision-button{
+  color: #fff;
+  background: linear-gradient(to right,#0074BB 0%, #02CDFB 100%); 
+  border-radius: 30px;
+  padding: 15px 0px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 4px 5px 5px 0 #9bdceb;
+  border: none;
+  margin: 0px auto 0;
+  width: 100px;
+}
+.arrow.left.head{
+  position: absolute;
+  float: left;
+  outline: none;
+  border: none;
+  margin-left: 40%;
+  margin-top: 3.25%;
+  z-index: 2;
+}
+.arrow.right.head{
+  position: absolute;
+  float: right;
+  outline: none;
+  border: none;
+  margin-left: 58%;
+  margin-top: 3.25%;
+  z-index: 2;
+}

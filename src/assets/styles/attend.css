@@ -23,7 +23,7 @@ body {
 	}
 }
 
-.wave_animation > svg{
+.wave_animation>svg {
 	position: absolute;
 	bottom: 5%;
 }
@@ -38,4 +38,71 @@ body {
 	background-color: #2E78BA;
 	position: absolute;
 	bottom: 0;
+}
+
+/* buttonタグのリセットCSS */
+button {
+	padding: 0;
+	font-family: inherit;
+	appearance: none;
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+}
+
+/* ボタンのスタイル */
+.attend_button_click {
+	position: relative;
+	display: block;
+	width: 100%;
+	max-width: 320px;
+	height: 64px;
+	padding: 2px;
+	font-family: sans-serif;
+	font-size: 16px;
+	text-align: center;
+	overflow-wrap: anywhere;
+	border-radius: 32px;
+	/* (buttonの高さ / 2) の値 */
+	margin: 0 auto;
+}
+
+.attend_button_click::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	content: "";
+	filter: blur(8px);
+	border-radius: 32px;
+	/* (buttonの高さ / 2) の値 */
+	opacity: 0;
+}
+
+.attend_button_click_item {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	color: #2E78BA;
+	background-color: #ffffff;
+	border-radius: 32px;
+	/* (buttonの高さ / 2) の値 */
+	font-size: 25px;
+	font-weight: bold;
+}
+
+@media (any-hover: hover) {
+	.attend_button_click::before {
+		transition: opacity 0.2s;
+		will-change: filter;
+	}
+
+	.attend_button_click:hover::before {
+		opacity: 1;
+	}
 }

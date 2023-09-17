@@ -1,35 +1,60 @@
 <!-- イントロページ作成場所　フロント -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- ウェブサイト名は仮 -->
     <title>POSSE HarborS System</title>
-    <link rel="stylesheet" href="" />
-    <link rel="stylesheet" href="../assets/styles/intro.css">
+    <link rel="stylesheet" href="../assets/styles/normalize.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@3.0.2/destyle.min.css">
+    <link rel="stylesheet" href="../assets/styles/intro.css" />
+    <link href="../vendor/tailwind/tailwind.output.css" rel="stylesheet" />
+    <script src="../assets/js/hamburger.js" defer></script>
 </head>
+
 <body>
     <!-- ヘッダー -->
     <header>
-        <div class="p-header__logo">
-            <a href="./" >
-                <!-- webサイト名、ロゴ -->
-                <img src="../assets/img/6.png" alt="ロゴ" height="90px">
-                Harbors System
-            </a>
-        </div>
+        <!-- webサイト名、ロゴ -->
+        <a href="./">
+            <div class="p-header__logos">
+                <div class="p-header__mark">
+                    <img src="../assets/img/6.png" alt="ロゴ" height="90px" />
+                </div>
+                <div class="p-header__website-name">HarborS System</div>
+            </div>
+        </a>
         <div class="p-header__status">
-            <!-- ステータス「入室しています」「退室しています」 -->
-            入室しています
+            <!-- ステータス「入室中」「退室中」 -->
+            入室中
         </div>
-        <!-- ハンバーガーメニュー -->
-        <button class="p-header__button" id="js-headerButton"></button>
-
     </header>
+        <!-- ハンバーガーメニュー -->
+        <!-- <button class="p-header__button" id="js-headerButton"></button> -->
+        <nav class="Menu" id="js-menulist">
+            <button type="button" class="Menu-CloseBtn"  id="js-menu-closebtn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="Menu-CloseBtn-Icon" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <ul class="Menu-Group" id="js-Menu-Group">
+                <li class="Menu-Group-Item">
+                    <a class="Menu-Group-Item-Link" href="/">
+                        <span>イベント・予約一覧</span>
+                    </a>
+                </li>
+                <li class="Menu-Group-Item">
+                    <a class="Menu-Group-Item-Link" href="/about/">
+                        <span>プロフィール</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     <!-- メイン -->
-    <main>
-
-    </main>
+    <main></main>
 </body>
+
 </html>

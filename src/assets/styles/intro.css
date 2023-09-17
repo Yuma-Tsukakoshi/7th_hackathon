@@ -1,18 +1,123 @@
 /* ヘッダー */
 header {
+    height: 75px;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 800;
 }
-.p-header__logo {
+
+.p-header__logos {
+    display: flex;
+    width: 200px;
+}
+
+.p-header__mark {
     width: 90px;
+    height: 75px;
+}
+
+.p-header__website-name {
+    width: 150px;
+    height: 75px;
 }
 
 .p-header__status {
-    width: 50px;
+    width: 20%;
     height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(46, 119, 186);
+    border-radius: 5px;
+    border: solid 2px rgb(46, 119, 186);
 }
 
-.p-header__button {
-    width: 50px;
-    height: 30px;
+/* .p-header__button {
+    appearance: none;
+    background: transparent;
+    border-radius: 0;
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    text-align: inherit;
+    text-transform: inherit;
+    vertical-align: middle;
+    height: 40px;
+    right: 19px;
+    top: 8px;
+    width: 40px;
+} */
+
+/* ハンバーガーメニュー */
+.Menu {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    color: #111;
+}
+
+.Menu.active{
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+.Menu-CloseBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10000;
+    padding: 8px;
+}
+
+.Menu-CloseBtn-Icon {
+    width: 32px;
+    color: #111;
+}
+
+.Menu-Group {
+    visibility: hidden;
+}
+
+.Menu-Group.active {
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80vw;
+    height: 100vh;
+    background: #fff;
+    padding: 32px 12px;
+    z-index: 1000;
+}
+
+.Menu-Group>*+* {
+    border-top: solid 1px #bbb;
+}
+
+.Menu-Group-Item {
+    width: 100%;
+    flex: auto;
+    padding: 4px;
+}
+
+.Menu-Group-Item-Link {
+    padding: 1em 0.5em;
+    display: flex;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    margin: 50px 0 50px 0;
+}
+
+.Menu-Group-Item-Link::after {
+    content: "";
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJoLTYgdy02IiBmaWxsPSJub25lIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjIiPiA8cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGQ9Ik05IDVsNyA3LTcgNyIgLz48L3N2Zz4=");
+    width: 20px;
+    display: block;
+    margin-left: auto;
 }

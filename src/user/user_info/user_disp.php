@@ -162,8 +162,5 @@ $posts = $pdo->query($sql)->fetchAll();
 
 </body>
 
+
 </html>
-
-
-<!-- ユーザー詳細 フロント -->
-

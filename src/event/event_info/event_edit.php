@@ -67,7 +67,7 @@ $user = $stmt->fetch();
     <div class="flex flex-col flex-1 w-full">
       <main class="h-full pb-16 overflow-y-auto">
         <h1 class="my-6 text-2xl font-semibold text-gray-700 text-center">学生情報詳細 <?= $user["name"] ?> 様</h1>
-        <form action="http://localhost:8080/user/user_info/user_edit_check.php?id=<?= $user["id"] ?>" method="POST" enctype="multipart/form-data">
+        <form action="http://localhost:8080/user/user_info/user_edit_check.phphttp://localhost:8080/event/event_info/event_disp.php" method="POST" enctype="multipart/form-data">
           <div class="flex justify-center">
             <table class="w-full mx-8 max-w-4xl bg-white shadow-md rounded-lg overflow-hidden">
               <thead class="bg-blue-500 text-white">

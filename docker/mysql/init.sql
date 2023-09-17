@@ -66,9 +66,6 @@ VALUES
   (4, 6, 0),
   (6, 5, 1);
 
-
-
-
 CREATE TABLE user_event_relation (
   id INT AUTO_INCREMENT PRIMARY KEY,
   user_id INT COMMENT 'ユーザーID',

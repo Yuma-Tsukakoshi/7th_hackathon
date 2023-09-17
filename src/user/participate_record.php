@@ -2,8 +2,6 @@
 session_start();
 
 require_once(dirname(__FILE__) . '/../dbconnect.php');
-// $uid = $_SESSION['user_id'];
-
 
 //イベント情報の取得
 $sql = "SELECT * FROM event WHERE date = :date";
@@ -14,11 +12,6 @@ $formattedDate = date("Y-m-d", $timestamp);
 $stmt->bindValue(':date', $formattedDate);
 $stmt->execute();
 $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-// if (!isset($_SESSION['id'])) {
-//     header('Location: http://localhost:8080/admin/boozer_auth/boozer_signup.php');
-//     exit();
-// }
 ?>
 
 <!DOCTYPE html>
@@ -70,11 +63,11 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <!-- 後に参加不参加で場合分けする -->
                             <!-- <?php
                                   if ($event["status_id"] == 0) {
-                                    echo '<button onclick="joinBtn(this)" data-uid="' . htmlspecialchars($_SESSION['user_id']) . '" data-eid="' . htmlspecialchars($event["id"]) . '" data-date="' . htmlspecialchars($_GET['date']) . '" class="px-2 py-1 font-semibold leading-tight text-blue-500 bg-green-100 rounded-full">参加する</button>';
+                                    echo '<button onclick="joinBtn(this)" data-uid="' . htmlspecialchars($_COOKIE['user_id']) . '" data-eid="' . htmlspecialchars($event["id"]) . '" data-date="' . htmlspecialchars($_GET['date']) . '" class="px-2 py-1 font-semibold leading-tight text-blue-500 bg-green-100 rounded-full">参加する</button>';
                                   } else {
                                     echo '<button class="px-2 py-1 font-semibold leading-tight text-gray-500 bg-gray-100 rounded-full" disabled=true >参加済</button>';
                                   } ?> -->
-                            <button onclick="joinBtn(this)" data-uid="<?= $_SESSION['user_id'] ?>" data-eid="<?= $event["id"] ?>" data-date="<?= $_GET['date'] ?>" class="
+                            <button onclick="joinBtn(this)" data-uid="<?= $_COOKIE['user_id'] ?>" data-eid="<?= $event["id"] ?>" data-date="<?= $_GET['date'] ?>" class="
                           px-2 py-1 font-semibold leading-tight text-blue-500 bg-green-100 rounded-full">参加
                             </button>
                           </summary>

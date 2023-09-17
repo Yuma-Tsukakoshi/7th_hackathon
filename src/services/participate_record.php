@@ -1,9 +1,7 @@
 <?php
-session_start();
-
 require_once(dirname(__FILE__) . '/../dbconnect.php');
 
-$uid = $_SESSION['user_id'];
+$uid = $_COOKIE['user_id'];
 $eid = $_POST['eid'];
 $date = $_POST['date'];
 

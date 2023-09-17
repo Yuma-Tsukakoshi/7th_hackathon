@@ -27,20 +27,20 @@ session_start();
   
   include("../components/header.php"); ?>
   <main>
-    <!-- 3, 4期生の入室状態確認機能 -->
-    <section class="status-section">
+    <!-- 3, 4期生の入室状態確認機能 イントロページver -->
+    <section class="upbar-section">
       <!-- 上のナビゲーション -->
-      <div class="status-section__nav">
-        <div class="status-section__nav__title">入室状況</div>
-        <div class="status-section__nav__date">
-          <div class="status-section__nav__date__text">日付</div>
-          <div class="status-section__nav__date__input">
-            <input type="date" name="date" id="date" value="2021-01-01" />
-          </div>
+      <div class="upbar-section__nav">
+        <!-- 入退室画面へ飛ぶボタン -->
+        <div class="upbar-section__nav__attend">
+          <a href="http://localhost:8080/user/attend.php" class="upbar-section__nav__attend__link">入退室</a>
+        </div>
+        <!-- 今のハーバーズにいる人がわかる画面へ飛ぶボタン -->
+        <div class="status-section__nav__status">
+          <a href="http://localhost:8080/user/index.php" class="upbar-section__nav__attend__link">今のHarborS</a>
         </div>
       </div>
     </section>
-
     <!-- カレンダー -->
     <section class="calendar-section">
       <div class="calendar open-calendar" id="show-calendar">

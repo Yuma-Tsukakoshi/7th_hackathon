@@ -171,17 +171,19 @@ header {
     margin-left: auto;
 }
 
-/* 3, 4期生の入室状態確認機能 */
+/* 入退室画面・はばずの滞在者画面切り替えバー */
 .upbar-section{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 50px;
     background-color: #e8e8e8;
     border-bottom: solid 1px #bbb;
-    margin-top: 75px;
+    /* margin-top: 75px; */
     /* position: fixed;
     top: 75px; */
+    position: fixed;
+    top: 60px;
+    z-index: 800;
 }
 
 .upbar-section__nav {
@@ -196,6 +198,7 @@ header {
 
 .status-section__nav__status {
     width: 50%;
+    border-bottom: 0.3rem solid #0074BB;
 }
 
 .upbar-section__nav__attend__link {
@@ -205,4 +208,10 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* 3, 4期生の入室状態確認機能 */
+.status-section__title-gen {
+    font-size: 20px;
+    font-weight: bold;
 }

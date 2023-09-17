@@ -1,0 +1,18 @@
+/* ヘッダー */
+header {
+    display: flex;
+    justify-content: space-between;
+}
+.p-header__logo {
+    width: 90px;
+}
+
+.p-header__status {
+    width: 50px;
+    height: 30px;
+}
+
+.p-header__button {
+    width: 50px;
+    height: 30px;
+}

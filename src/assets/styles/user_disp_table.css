@@ -12,3 +12,19 @@
   position:absolute;
   top:0;
 }
+
+.git {
+  position: absolute;
+  top:120px;
+  right: 20px;
+  margin-right: 5px;
+  font-size: 25px;
+}
+
+
+
+.follow{
+  position: absolute;
+  top:170px;
+  right: 0px;
+}

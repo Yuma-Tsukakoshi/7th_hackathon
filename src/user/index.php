@@ -1,5 +1,9 @@
 <?php
-session_start();
+require_once(dirname(__FILE__) . '../../dbconnect.php');
+
+$sql = "SELECT id,name,kisei,image FROM users WHERE user_exist = 1";
+$posts = $pdo->query($sql)->fetchAll();
+
 ?>
 
 <!-- イントロページ作成場所 フロント -->
@@ -50,14 +54,26 @@ session_start();
         <h1>3期生</h1>
         <div class="wrap slide-paused" ontouchstart="">
           <ul class="icon_slide">
-            <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_1.jpg" alt="">3.0 木村宥哉<div class="anchor_img"></div>/li>
-            <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_2.jpg" alt="">3.5 鈴木大騎</li>
-            <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_3.jpg" alt="">3.0 平手美羽</li>
-            <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_4.jpg" alt="">3.0 岩城和輝</li>
+            <?php
+            $items = $posts;
+            $groupedItems = array_chunk($items, 4);
+            
+
+
+            ?>
+
+
+
+
+          
+            <li class="content"><img src="" alt="" data-id="1">3.0 木村宥哉<div class="anchor_img"></div>/li>
+            <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_2.jpg" alt="" data-id="2">3.5 鈴木大騎</li>
+            <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_3.jpg" alt="" data-id="3">3.0 平手美羽</li>
+            <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_4.jpg" alt="" data-id="4">3.0 岩城和輝</li>
           </ul>
           <ul class="icon_slide">
-            <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_5.jpg" alt="">3.5 森はるか</li>
-            <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_6.jpg" alt="">3.0 小野媛乃</li>
+            <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_5.jpg" alt="" data-id="5">3.5 森はるか</li>
+            <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_6.jpg" alt="" data-id="6">3.0 小野媛乃</li>
             <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_7.jpg" alt="">3.0 井上岳</li>
             <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_8.jpg" alt="">3.0 野呂美智子</li>
           </ul>
@@ -66,7 +82,7 @@ session_start();
             <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_10.jpg" alt="">3.0 神野豪気</li>
             <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_11.jpg" alt="">3.0 上野侑紗</li>
             <li class="content"><img src="../assets/img/LINE_ALBUM_3期生アイコン画像_230917_12.jpg" alt="">3.5 辻健世</li>
-          </ul>
+
         </div>
         <div class="wave">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300">

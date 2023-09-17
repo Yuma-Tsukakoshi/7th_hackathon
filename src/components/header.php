@@ -26,7 +26,7 @@
 <nav class="Menu" id="js-menulist">
     <ul class="Menu-Group" id="js-Menu-Group">
         <li class="Menu-Group-Item">
-            <a class="Menu-Group-Item-Link" href="">
+            <a class="Menu-Group-Item-Link" href="../user/event_list.php">
                 <span>イベント・予約一覧</span>
             </a>
         </li>

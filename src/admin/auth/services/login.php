@@ -14,12 +14,9 @@ if (isset($_POST['mail']) && isset($_POST['password'])) {
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         
         if ($row_cnt > 0 && password_verify($password, $result['password'])){ // パスワードを検証
-            session_regenerate_id(TRUE); // セッションidを再発行
             // $_SESSION['unique_email'] = $_POST['mail'];
             // $_SESSION['user_id'] = $result['id'];
             setcookie('user_id', $result['id'], time() + 60 * 60 * 24 * 14, '/');
-            // echo $_COOKIE['user_id'];
-            
             header('Location: ../../../user/index.php');
         } else {
             $_SESSION['error_message'] = 'Eメールもしくはパスワードが、間違っています';

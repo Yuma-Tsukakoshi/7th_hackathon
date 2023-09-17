@@ -20,7 +20,7 @@ $post = $stmt->fetch(PDO::FETCH_ASSOC);*/
   <link href="../vendor/tailwind/tailwind.output.css" rel="stylesheet">
   <link rel="stylesheet" href="../assets/styles/intro.css">
   <link rel="stylesheet" href="../assets/styles/attend.css">
-  <script src="../assets/js/attend.js" defer></script>
+  <script src="../assets/js/new-attend.js" defer></script>
   <title>入退室画面</title>
 </head>
 

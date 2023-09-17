@@ -22,8 +22,16 @@
   <main>
     <!-- 3, 4期生の入室状態確認機能 -->
     <section class="status-section">
-      <!-- 上のサイドバー -->
-      
+      <!-- 上のナビゲーション -->
+      <div class="status-section__nav">
+        <div class="status-section__nav__title">入室状況</div>
+        <div class="status-section__nav__date">
+          <div class="status-section__nav__date__text">日付</div>
+          <div class="status-section__nav__date__input">
+            <input type="date" name="date" id="date" value="2021-01-01" />
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- カレンダー -->

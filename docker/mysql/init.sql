@@ -19,6 +19,8 @@ CREATE TABLE users(
   circle VARCHAR(255) COMMENT "兼サー先",
   station VARCHAR(255) COMMENT "最寄り駅",
   nickname VARCHAR(255) COMMENT "ニックネーム",
+  instagram VARCHAR(255) COMMENT "インスタグラム",
+  github VARCHAR(255) COMMENT "githubURL",
   harborsdate VARCHAR(255) COMMENT "よくはばずにいる日時",
   hobby VARCHAR(255) COMMENT "趣味",
   message TEXT COMMENT "自己紹介",
@@ -26,11 +28,11 @@ CREATE TABLE users(
   created_at DATETIME COMMENT "作成日時"
 ) CHARSET=utf8;
 
-INSERT INTO users (name, kisei, image, tate, yoko, brosis, highschool, college, faculty, grade, birthday, circle, station, nickname, harborsdate, hobby, message, user_exist, created_at)
+INSERT INTO users (name, kisei, image, tate, yoko, brosis, highschool, college, faculty, grade, birthday, circle, station, nickname, instagram,github,harborsdate, hobby, message, user_exist, created_at)
 VALUES
-  ('田中太郎', '4期生', 'path/to/image1.jpg', 'A', 'B', 'ブラシスX', '高校A', '大学X', '学部A', '1年', '2000-01-15', 'サークル1', '最寄り駅A', 'ニックネーム1', '月曜日 18:00', '趣味A', '自己紹介1', '1', '2023-09-17 10:30:00'),
-  ('山田花子', '5期生', 'path/to/image2.jpg', 'B', 'C', 'ブラシスY', '高校B', '大学Y', '学部B', '2年', '1999-03-20', 'サークル2', '最寄り駅B', 'ニックネーム2', '水曜日 19:30', '趣味B', '自己紹介2', '0', '2023-09-16 15:45:00'),
-  ('佐藤次郎', '3期生', 'path/to/image3.jpg', 'C', 'A', 'ブラシスZ', '高校C', '大学Z', '学部C', '3年', '1998-07-10', 'サークル3', '最寄り駅C', 'ニックネーム3', '金曜日 17:15', '趣味C', '自己紹介3', '0', '2023-09-15 20:20:00');
+  ('田中太郎', '4期生', 'path/to/image1.jpg', 'A', 'B', 'ブラシスX', '高校A', '大学X', '学部A', '1年', '2000-01-15', 'サークル1', '最寄り駅A', 'ニックネーム1','https://www.instagram.com/','b.com/Yuma-Tsukakoshi/2023_hackathon_project/issues' ,'月曜日 18:00', '趣味A', '自己紹介1', '1', '2023-09-17 10:30:00'),
+  ('山田花子', '5期生', 'path/to/image2.jpg', 'B', 'C', 'ブラシスY', '高校B', '大学Y', '学部B', '2年', '1999-03-20', 'サークル2', '最寄り駅B', 'ニックネーム2' ,'https://www.instagram.com/','b.com/Yuma-Tsukakoshi/2023_hackathon_project/issues','水曜日 19:30', '趣味B', '自己紹介2', '0', '2023-09-16 15:45:00'),
+  ('佐藤次郎', '3期生', 'path/to/image3.jpg', 'C', 'A', 'ブラシスZ', '高校C', '大学Z', '学部C', '3年', '1998-07-10', 'サークル3', '最寄り駅C', 'ニックネーム3','https://www.instagram.com/','b.com/Yuma-Tsukakoshi/2023_hackathon_project/issues','金曜日 17:15', '趣味C', '自己紹介3', '0', '2023-09-15 20:20:00');
 
 CREATE TABLE user_follower_relation (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -95,6 +97,6 @@ CREATE TABLE user_invitations (
 -- user_invitationsテーブルにダミーデータを挿入
 INSERT INTO user_invitations (mail, password, user_id, created_at)
 VALUES
-  ('invite1@example.com', 'hashed_password1', 1, '2023-09-05 08:00:00'),
-  ('invite2@example.com', 'hashed_password2', 2, '2023-09-06 09:30:00'),
-  ('invite3@example.com', 'hashed_password3', 3, '2023-09-07 10:45:00');
+  ('invite1@example.com', '$2a$12$byHvyvLQINYVC32wSk7INu6vUHsfUre.OWG9IIvNALuDEDVYxvgPS', 1, '2023-09-05 08:00:00'),
+  ('invite2@example.com', '$2a$12$byHvyvLQINYVC32wSk7INu6vUHsfUre.OWG9IIvNALuDEDVYxvgPS', 2, '2023-09-06 09:30:00'),
+  ('invite3@example.com', '$2a$12$byHvyvLQINYVC32wSk7INu6vUHsfUre.OWG9IIvNALuDEDVYxvgPS', 3, '2023-09-07 10:45:00');

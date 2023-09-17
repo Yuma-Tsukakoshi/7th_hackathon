@@ -21,10 +21,10 @@ session_start()
         <p class="text-xl text-red-600 mb-5"><?php echo $_SESSION['error_message']; ?></p>
         <?php unset($_SESSION['error_message']); ?>
       <?php } ?>
-      <form action="../services/login.php" method="post">
+      <form action="services/login.php" method="post">
         <div class="mb-4">
           <label class="block text-gray-700 font-medium mb-2" for="email">メールアドレス</label>
-          <input class="border border-gray-400 p-2 w-full" type="email" id="email" name="email" required>
+          <input class="border border-gray-400 p-2 w-full" type="email" id="email" name="mail" required>
         </div>
         <div class="mb-6">
           <label class="block text-gray-700 font-medium mb-2" for="password">パスワード</label>

@@ -10,6 +10,9 @@ header {
 .p-header__logos {
   display: flex;
   width: 200px;
+  position:absolute;
+  top:0;
+  margin:0;
 }
 
 .p-header__mark {
@@ -21,15 +24,16 @@ header {
   width: 150px;
   height: 75px;
   padding-left: 10%;
-  margin-top: 10%;
+  margin-top: 3%;
   color: #2E78BA;
   font-weight: bold;
 }
 
 .arrow_left {
-  position: relative;
+  position: absolute;
   padding-left: 20%;
   margin-top: -15%;
+  top:0;
 }
 
 .arrow_left::before { /* くの字の表示設定 */
@@ -87,6 +91,6 @@ header {
   position: absolute;
   z-index: 400;
   margin-left: 25%;
-  margin-top: 25%;
+  margin-top: -12%;
   transform: rotate(15deg);
 }

@@ -22,6 +22,7 @@ $post = $stmt->fetch(PDO::FETCH_ASSOC);
   <link rel="stylesheet" href="../assets/styles/attend.css">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
   <script src="../assets/js/new-attend.js" defer></script>
+  <script src="../assets/js/hamburger.js" defer></script>
   <title>入退室画面</title>
 </head>
 

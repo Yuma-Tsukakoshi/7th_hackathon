@@ -224,8 +224,18 @@ header {
     font-weight: bold;
 }
 
-.younger_members > h1{
+.older_members > h1{
     padding-top: 32%;
+    padding-left: 20px;
+    padding-bottom: 2%;
+    color: #004c71;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.younger_members > h1{
+    /* padding-top: -20%; */
+    margin-top: -40%;
     padding-left: 20px;
     padding-bottom: 2%;
     color: #2E78BA;
@@ -234,6 +244,15 @@ header {
 }
 
 .wrap {
+    display: flex;
+    align-items: center;
+    height: 150px;
+    gap: 12px;
+    overflow: hidden;
+    background-color: #004c71;
+}
+
+.wrap2 {
     display: flex;
     align-items: center;
     height: 150px;
@@ -249,7 +268,33 @@ header {
 .icon_slide {
     display: flex;
     gap: 12px;
-    animation: loop-slide 10s infinite linear 0s both;
+    animation: loop-slide 20s infinite linear 0s both;
+}
+
+@keyframes loop-slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-220%);
+    }
+}
+
+.icon_slide2 {
+    display: flex;
+    gap: 12px;
+    animation: loop-slide2 20s infinite linear 0s both;
+}
+
+@keyframes loop-slide2 {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-118%);
+    }
 }
 
 /* @keyframes loop-slide {
@@ -261,16 +306,6 @@ header {
         transform: translateX(-100%);
     }
 } */
-
-@keyframes loop-slide {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-210%);
-    }
-}
 
 .content {
     width: 100px;
@@ -309,7 +344,7 @@ header {
 }
 
 	.wave svg use {
-		fill:#2E78BA;
+		fill:#004c71;
 		animation:wave linear 4s infinite;
 	}
 
@@ -324,6 +359,41 @@ header {
 
 	.wave svg use:nth-of-type(3) {
 		animation-duration:3s;
+	}
+
+@keyframes wave {
+	from {
+		transform:translate(0);
+	}
+	to {
+		transform:translate(-50%);
+	}
+}
+
+.wave2 {
+	overflow:hidden;
+	margin:0 auto;
+    margin-top: -18%;
+	width:100%;
+	height:100%;
+}
+
+	.wave2 svg use {
+		fill: #2E78BA;
+		animation:wave linear 5s infinite;
+	}
+
+	.wave2 svg use:nth-of-type(2),
+	.wave2 svg use:nth-of-type(3) {
+		opacity:0.2;
+	}
+
+	.wave2 svg use:nth-of-type(2) {
+		animation-duration:6s;
+	}
+
+	.wave2 svg use:nth-of-type(3) {
+		animation-duration:4s;
 	}
 
 @keyframes wave {

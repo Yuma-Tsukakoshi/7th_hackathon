@@ -1,5 +1,9 @@
 <?php
-session_start();
+require_once(dirname(__FILE__) . '../../dbconnect.php');
+
+$sql = "SELECT id,name,kisei,image FROM users WHERE user_exist = 1";
+$posts = $pdo->query($sql)->fetchAll();
+
 ?>
 
 <!-- イントロページ作成場所 フロント -->

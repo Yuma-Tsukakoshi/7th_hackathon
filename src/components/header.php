@@ -1,3 +1,4 @@
+
 <!-- ヘッダーとハンバーガーメニュー -->
 <header>
     <!-- webサイト名、ロゴ -->
@@ -25,12 +26,13 @@
 <nav class="Menu" id="js-menulist">
     <ul class="Menu-Group" id="js-Menu-Group">
         <li class="Menu-Group-Item">
-            <a class="Menu-Group-Item-Link" href="/">
+            <a class="Menu-Group-Item-Link" href="">
                 <span>イベント・予約一覧</span>
             </a>
         </li>
         <li class="Menu-Group-Item">
-            <a class="Menu-Group-Item-Link" href="/about/">
+
+            <a class="Menu-Group-Item-Link" href="../user/user_info/user_disp.php?id=<?= $_SESSION['user_id']?>">
                 <span>プロフィール</span>
             </a>
         </li>

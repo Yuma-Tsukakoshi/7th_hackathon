@@ -137,6 +137,7 @@
         }
       }
     })
+
     const getDate = document.querySelectorAll('.is-today,.is-disabled')
     // 取得した日にちでループを回す
     getDate.forEach(Selectable => {
@@ -145,7 +146,6 @@
         const selectedYear = year
         const selectedMonth = month
         const selectedDay = Selectable.innerHTML
-        console.log(selectedYear+"-"+selectedMonth+"-"+Number(selectedDay));
 
         // is-selectedというclassをもつSelectableを取得する
         const selectedDate = document.querySelector('.is-selected')
@@ -155,7 +155,12 @@
         }  
         // clickされたSelectableにis-selectedというclassを追加する
         Selectable.classList.add('is-selected')
-      })
+
+        // http://localhost:8080/user/participate_record.php のリンクに遷移する際のurlパラメータに年月日を追加する
+        const param = selectedYear+"-"+selectedMonth+"-"+Number(selectedDay);
+        const url = "participate_record.php?date=" + param;
+        window.location.href = url;
+      }, false)
     })
   }
   setSelectedDay()

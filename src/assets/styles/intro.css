@@ -1,3 +1,6 @@
+body {
+    overflow: hidden;
+}
 /* ヘッダー */
 header {
     height: 75px;
@@ -5,7 +8,9 @@ header {
     display: flex;
     align-items: center;
     position: fixed;
+    top: 0;
     z-index: 800;
+    background-color: #fff;
 }
 
 .p-header__logos {
@@ -89,14 +94,18 @@ header {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
     color: #111;
+    position: fixed;
+    z-index: 1;
 }
 
 .Menu.active {
     background: rgba(0, 0, 0, 0.2);
     z-index: 999;
     position: fixed;
+    height: 100vh;
+    position: fixed;
+    z-index: 1000;
 }
 
 .Menu-CloseBtn {
@@ -160,3 +169,35 @@ header {
 }
 
 /* 3, 4期生の入室状態確認機能 */
+.upbar-section{
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: #e8e8e8;
+    border-bottom: solid 1px #bbb;
+    margin-top: 75px;
+}
+
+.upbar-section__nav {
+    display: flex;
+    height: 50px;
+}
+
+.upbar-section__nav__attend {
+    width: 50%;
+}
+
+
+.status-section__nav__status {
+    width: 50%;
+}
+
+.upbar-section__nav__attend__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

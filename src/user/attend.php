@@ -22,6 +22,8 @@ $post = $stmt->fetch(PDO::FETCH_ASSOC);
   <link rel="stylesheet" href="../assets/styles/attend.css">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
   <script src="../assets/js/new-attend.js" defer></script>
+  <script src="../assets/js/hamburger.js" defer></script>
+  <script src="../assets/js/navbar.js" defer></script>
   <title>入退室画面</title>
 </head>
 
@@ -31,12 +33,12 @@ $post = $stmt->fetch(PDO::FETCH_ASSOC);
       <!-- 上のナビゲーション -->
       <div class="upbar-section__nav">
         <!-- 入退室画面へ飛ぶボタン -->
-        <div class="upbar-section__nav__attend">
+        <div class="upbar-section__nav__attend" id="nav_attend">
           <a href="http://localhost:8080/user/attend.php" class="upbar-section__nav__attend__link">入退室</a>
         </div>
         <!-- 今のハーバーズにいる人がわかる画面へ飛ぶボタン -->
-        <div class="status-section__nav__status">
-          <a href="http://localhost:8080/user/index.php" class="upbar-section__nav__attend__link">今のHarborS</a>
+        <div class="status-section__nav__status" id="nav_status">
+          <a href="http://localhost:8080/user/index.php" class="upbar-section__nav__attend__link" >今のHarborS</a>
         </div>
       </div>
     </section>

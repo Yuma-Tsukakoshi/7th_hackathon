@@ -13,7 +13,7 @@
     </a>
     <div class="p-header__status" id="js-header_status">
         <!-- ステータス「入室中」「退室中」 -->
-        <span id="js-header_statusText"></span>
+        <span id="js-header_statusText">退室中</span>
     </div>
 </header>
 <!-- ハンバーガーボタン -->

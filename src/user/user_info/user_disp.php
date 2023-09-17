@@ -49,8 +49,9 @@ $posts = $pdo->query($sql)->fetchAll();
   </div>
 
 
-  <div>
-
+  <div class="flex git">
+    <a href="<?= $posts[0]['github'] ?>"><i class="fa-brands fa-github "></i></a>
+    <a href="<?= $posts[0]['instagram'] ?>"><i class="fa-brands fa-instagram insta"></i></a>
   </div>
 
   <div class="">

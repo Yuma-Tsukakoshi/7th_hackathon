@@ -56,14 +56,11 @@
                   // 1行目で1日の曜日の前
                   let num = lastMonthendDayCount - startDay + d + 1
                   calendarHtml += '<td class="is-transparency">' + num + '</td>'
-              } else if ((year <= thisyear && month<=thismonth ) || (year < thisyear) || (month == thismonth+1 && dayCount<today)){
-                  calendarHtml += '<td class="is-disabled">' + dayCount + '</td>'
-                  dayCount++
               } else if (year == thisyear && month == thismonth+1 && dayCount == today ){
                   calendarHtml += '<td class="is-today">' + dayCount + '</td>'
-                  dayCount++    
+                  dayCount++  
               }else{
-                  calendarHtml += '<td class="is-available" >' + dayCount + '</td>'
+                  calendarHtml += '<td class="is-disabled" >' + dayCount + '</td>'
                   dayCount++
               }
           }
@@ -114,14 +111,10 @@
       }
       showCalendar(year, month)
   }
-  // document.querySelector('#prev').addEventListener('click', moveCalendar)
-  // document.querySelector('#next').addEventListener('click', moveCalendar)
-  // document.querySelector('#prev').addEventListener('click', setSelectedDay)
-  // document.querySelector('#next').addEventListener('click', setSelectedDay)
-  // document.querySelector('#prev-f').addEventListener('click', moveCalendar)
-  // document.querySelector('#next-f').addEventListener('click', moveCalendar)
-  // document.querySelector('#prev-f').addEventListener('click', setSelectedDay)
-  // document.querySelector('#next-f').addEventListener('click', setSelectedDay)
+  document.querySelector('#prev').addEventListener('click', moveCalendar)
+  document.querySelector('#next').addEventListener('click', moveCalendar)
+  document.querySelector('#prev').addEventListener('click', setSelectedDay)
+  document.querySelector('#next').addEventListener('click', setSelectedDay)
 
   showCalendar(year, month)
 
@@ -162,8 +155,6 @@
         }  
         // clickされたSelectableにis-selectedというclassを追加する
         Selectable.classList.add('is-selected')
-        // 学習日を更新する
-        // inputStudyDay.value = setStudyDay(day=e.target.textContent,year,month-1)
       })
     })
   }

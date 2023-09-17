@@ -14,10 +14,11 @@ $sql = "SELECT * FROM event WHERE date = :date";
 $stmt = $pdo->prepare($sql);
 $timestamp = strtotime($_GET['date']);
 $formattedDate = date("Y-m-d", $timestamp);
-var_dump($formattedDate);
+// var_dump($formattedDate);
 $stmt -> bindValue(':date', $formattedDate,PDO::PARAM_STR);
 $stmt->execute();
 $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 
 // $sql = "SELECT date FROM event WHERE date = '2023-09-20'";
 // $stmt = $pdo->prepare($sql);
@@ -72,17 +73,20 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                   <?php foreach ($events as $key => $event) { ?>
                     <tr class="text-gray-700">
                       <td class="px-4 py-3">
-                        <p class="font-semibold items-center text-sm"><?= $event["updated_at"] ?></p>
+                        <p class="font-semibold items-center text-sm"><?= $event["title"] ?></p>
+                      </td>
+                      <td class="px-4 py-3">
+                        <p class="font-semibold items-center text-sm"><?= $event["kisei"] ?></p>
                       </td>
                       <td class="px-4 py-3 text-sm">
-                        <?= $agent["started_at"] ?> ~ <?= $agent["ended_at"] ?>
+                        <?= substr($event["start_time"], 0, 5); ?> ~ <?= substr($event["end_time"], 0, 5)?>
                       </td>
                       <td class="px-4 py-3 text-xs">
                         <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full">
-                          登録承認
+                          参加
                         </span>
                       </td>
-                      <td class="px-4 py-3 text-sm">
+                      <!-- <td class="px-4 py-3 text-sm">
                         <?php
                         $found = false;
                         for ($i = 0; $i < count($agent_count); $i++) {
@@ -105,7 +109,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <a href="http://localhost:8080/admin/delete.php?id=<?= $agent["client_id"] ?>">削除</a>
                           </button>
                         </div>
-                      </td>
+                      </td> -->
                     </tr>
                   <?php } ?>
                 </tbody>

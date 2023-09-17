@@ -12,7 +12,7 @@ header {
     top: 0;
     z-index: 800;
     background-color: #fff;
-    top:0;
+    top: 0;
 
 }
 
@@ -77,6 +77,7 @@ header {
     top: 5px;
     transform: rotate(45deg);
 }
+
 /* ボタンの位置を固定 */
 #js-menu-closebtn {
     position: fixed;
@@ -172,7 +173,7 @@ header {
 }
 
 /* 入退室画面・はばずの滞在者画面切り替えバー */
-.upbar-section{
+.upbar-section {
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -214,4 +215,115 @@ header {
 .status-section__title-gen {
     font-size: 20px;
     font-weight: bold;
+}
+
+.younger_members > h1{
+    padding-top: 32%;
+    padding-left: 20px;
+    padding-bottom: 2%;
+    color: #2E78BA;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.wrap {
+    display: flex;
+    align-items: center;
+    height: 150px;
+    gap: 12px;
+    overflow: hidden;
+    background-color: #2E78BA;
+}
+
+/* .icon_slide {
+    display: flex;
+} */
+
+.icon_slide {
+    display: flex;
+    gap: 12px;
+    animation: loop-slide 10s infinite linear 0s both;
+}
+
+/* @keyframes loop-slide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+} */
+
+@keyframes loop-slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-210%);
+    }
+}
+
+.content {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.content > img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.content {
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.slide-paused:hover .icon_slide {
+    animation-play-state: paused;
+}
+
+.wave {
+	overflow:hidden;
+	margin:0 auto;
+    margin-top: -18%;
+	width:100%;
+	height:100%;
+}
+
+	.wave svg use {
+		fill:#2E78BA;
+		animation:wave linear 4s infinite;
+	}
+
+	.wave svg use:nth-of-type(2),
+	.wave svg use:nth-of-type(3) {
+		opacity:0.2;
+	}
+
+	.wave svg use:nth-of-type(2) {
+		animation-duration:5s;
+	}
+
+	.wave svg use:nth-of-type(3) {
+		animation-duration:3s;
+	}
+
+@keyframes wave {
+	from {
+		transform:translate(0);
+	}
+	to {
+		transform:translate(-50%);
+	}
 }

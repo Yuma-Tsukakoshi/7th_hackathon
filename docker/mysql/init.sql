@@ -66,14 +66,35 @@ VALUES
   (4, 6, 0),
   (6, 5, 1);
 
+  CREATE TABLE user_visit_log (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT COMMENT 'ユーザーID',
+  created_at DATETIME COMMENT '発行日時'
+) CHARSET=utf8;
 
+INSERT INTO user_visit_log (user_id, created_at)
+VALUES
+  (1, '2023-09-13 08:30:00'),
+  (1, '2023-09-18 10:15:00'),
+  (2, '2023-09-14 12:45:00'),
+  (2, '2023-09-20 14:20:00'),
+  (3, '2023-09-21 16:00:00'),
+  (3, '2023-09-22 17:40:00'),
+  (4, '2023-09-23 19:25:00'),
+  (4, '2023-09-24 21:10:00'),
+  (5, '2023-09-25 22:55:00'),
+  (5, '2023-09-26 00:30:00'),
+  (6, '2023-09-27 02:15:00'),
+  (6, '2023-09-28 03:50:00'),
+  (7, '2023-09-29 05:35:00'),
+  (7, '2023-09-30 07:20:00');
 
 
 CREATE TABLE user_event_relation (
   id INT AUTO_INCREMENT PRIMARY KEY,
   user_id INT COMMENT 'ユーザーID',
   event_id INT COMMENT 'イベントID',
-  status_id boolean COMMENT '状態のID'
+  status_id boolean DEFAULT 0 COMMENT '状態のID'
 ) CHARSET=utf8;
 
 

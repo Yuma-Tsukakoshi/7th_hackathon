@@ -15,10 +15,10 @@ const headerText = document.getElementById('js-header_statusText');
 
 // アンカーの下のボタン
 text.addEventListener('click', () => {
-    const newText = text.classList.toggle('active') ? '入室する' : '退室する';
+    const newText = text.classList.toggle('active') ? '退室する' : '入室する';
     text.textContent = newText;
     // ヘッダー
-    const newStatus = headerText.classList.toggle('active') ? '退室中' : '入室中';
+    const newStatus = headerText.classList.toggle('active') ? '入室中' : '退室中';
     headerText.textContent = newStatus;
     headerStatus.classList.toggle('active');
 });

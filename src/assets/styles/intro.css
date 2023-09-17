@@ -37,15 +37,15 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(46, 119, 186);
+    color: rgb(134, 134, 134);
     border-radius: 5px;
-    border: solid 2px rgb(46, 119, 186);
+    border: solid 2px rgb(134, 134, 134);;
 }
 
 .p-header__status.active {
-    color: rgb(134, 134, 134);
+    color: rgb(46, 119, 186);
     background-color: #e6e6e6;
-    border: solid 2px rgb(134, 134, 134);
+    border: solid 2px rgb(46, 119, 186);
 }
 
 /* ハンバーガーメニューの線 */

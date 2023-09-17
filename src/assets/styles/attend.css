@@ -1,0 +1,32 @@
+.contents {
+  text-align: center;
+}
+
+.anchor_animation{
+  /* position: absolute; */
+	top: 0;
+	/* left: 50px; */
+	width: 100%;
+	/* height: 50px; */
+	animation: come-down-anim 2s linear;
+	/* z-index: 5; */
+}
+
+@keyframes come-down-anim {
+	0% {
+	transform: translateY(-100%);
+	}
+	100% {
+	transform: translateY(2px);
+	}
+}
+
+.attend_button{
+  width: 100%;
+  padding-top: 6%;
+  padding-bottom: 6%;
+  font-size: 40px;
+  color: aliceblue;
+  font-weight: bold;
+  background-color: #2E78BA;
+}

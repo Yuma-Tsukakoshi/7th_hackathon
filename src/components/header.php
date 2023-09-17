@@ -32,7 +32,7 @@
         </li>
         <li class="Menu-Group-Item">
 
-            <a class="Menu-Group-Item-Link" href="../user/user_info/user_disp.php?id=<?= $_SESSION['user_id']?>">
+            <a class="Menu-Group-Item-Link" href="../user/user_info/user_disp.php?id=<?= $_COOKIE['user_id']?>">
                 <span>プロフィール</span>
             </a>
         </li>

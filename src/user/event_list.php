@@ -1,9 +1,8 @@
 <!-- 参加者イベント一覧 バックエンド -->
 <?
 require_once(dirname(__FILE__) . '/../dbconnect.php');
-// $id = $_SESSION['id'];
+$id = $_COOKIE['id'];
 // セッションでログインしているuserのidを取得
-$id = 2;
 
 $sql = "SELECT event.id, event.title, event.date, event.start_time, event.end_time, event.kisei, event.description, users.name, event.created_at ,uer.id as relation_id FROM event INNER JOIN users ON event.author_id = users.id INNER JOIN user_event_relation as uer ON event.id = uer.event_id WHERE uer.user_id = $id and uer.status_id = 1";
 $posts = $pdo->query($sql)->fetchAll();

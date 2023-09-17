@@ -15,17 +15,17 @@ session_start();
   <link rel="stylesheet" href="../assets/styles/intro.css" />
   <link href="../vendor/tailwind/tailwind.output.css" rel="stylesheet" />
   <script src="../assets/js/hamburger.js" defer></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+  <script src="../assets/js/new-attend.js" defer></script>
   <script src="../assets/js/calender.js" defer></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
   <title>イントロページ</title>
 </head>
 
 <body>
   <!-- ヘッダー -->
   
-  <?php 
-  
-  include("../components/header.php"); ?>
+  <!-- <?php 
+  include("../components/header.php"); ?> -->
   <main>
     <!-- 3, 4期生の入室状態確認機能 イントロページver -->
     <section class="upbar-section">

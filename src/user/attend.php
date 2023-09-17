@@ -76,7 +76,6 @@ $post = $stmt->fetch(PDO::FETCH_ASSOC);
     $.ajax({
       url: `http://localhost:8080/services/discord.php`,
       type: 'POST',
-      data: id,
       success: function() {
         console.log("success");
       },

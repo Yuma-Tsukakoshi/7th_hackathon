@@ -1,13 +1,24 @@
 <?php
 require_once(dirname(__FILE__) . '/../dbconnect.php');
-$sql = "SELECT * FROM user_visit_log WHERE user_id = :id AND date = :date";
+
+$sql = "SELECT * FROM user_visit_log WHERE user_id = :id AND DATE(created_at) = :date"; 
+$date = new DateTime('now'); 
+$stmt = $pdo->prepare($sql); 
+$stmt->bindValue(':id', $_COOKIE['user_id']); $stmt->bindValue(':date', $date->format('Y-m-d')); 
+$stmt->execute(); 
+$post = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+$sql = "INSERT INTO user_visit_log(user_id) VALUES(:id)";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':id', $_COOKIE['user_id']);
-
-$date = new DateTime('now');
-$stmt->bindValue(':date', $date->format('Y年m月d日 H時i分s秒'));
 $stmt->execute();
-$post = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$sql = "SELECT * FROM users WHERE id = :id";
+$stmt = $pdo->prepare($sql);
+$stmt->bindValue(':id', $_COOKIE['user_id']);
+$stmt->execute();
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 // var_dump($post);
 
@@ -28,17 +39,18 @@ function send_to_discord($message)
   return $response === 'ok'; //$responseの値がokならtrueを返す
 }
 
-// if(){
-//   $status = '入室';
-// }else{
-//   $status = '退室'; 
-// }
+if($post){
+  $status = '退室';
+}else{
+  $status = '入室'; 
+}
 
 //メッセージの内容を定義
 $message = array(
   'username' => 'harbors',
-  'content' => $name+'さんが'+ $status +'しました', 
+  'content' => $user['name'] . 'さんが' . $status . 'しました', 
 );
+
 
 //メッセージを送信
 send_to_discord($message);

@@ -237,6 +237,9 @@ header {
     margin-top: -40%;
     padding-left: 20px;
     padding-bottom: 1%;
+    margin-top: -40%;
+    padding-left: 20px;
+    padding-bottom: 2%;
     color: #2E78BA;
     font-size: 25px;
     font-weight: bold;
@@ -255,6 +258,15 @@ header {
     display: flex;
     align-items: center;
     height: 130px;
+    gap: 12px;
+    overflow: hidden;
+    background-color: #004c71;
+}
+
+.wrap2 {
+    display: flex;
+    align-items: center;
+    height: 150px;
     gap: 12px;
     overflow: hidden;
     background-color: #2E78BA;

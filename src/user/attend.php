@@ -5,7 +5,7 @@ require_once(dirname(__FILE__) . '/../dbconnect.php');
 
 $sql = "SELECT * FROM user_visit_log WHERE id = :id";
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue(':id',$_COOKIE['user_id']);
+$stmt->bindValue(':id', $_COOKIE['user_id']);
 $stmt->execute();
 $post = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -61,6 +61,10 @@ $post = $stmt->fetch(PDO::FETCH_ASSOC);
         <rect x="0" y="0" width="100%" height="110" fill="url(#ptn_nami22_b)" transform="scale(3.5,1)"></rect>
         <rect x="0" y="0" width="100%" height="120" fill="url(#ptn_nami22_c)" transform="scale(2,1)"></rect>
       </svg>
+
+      <div class="bird"></div>
+      <div class="bird -type_2"></div>
+      <div class="bird -type_3"></div>
 
     </div>
     <div class="attend_button">

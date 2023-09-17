@@ -20,6 +20,13 @@
   <!-- ヘッダー -->
   <?php include("../components/header.php"); ?>
   <main>
+    <!-- 3, 4期生の入室状態確認機能 -->
+    <section class="status-section">
+      <!-- 上のサイドバー -->
+      
+    </section>
+
+    <!-- カレンダー -->
     <section class="calendar-section">
       <div class="calendar open-calendar" id="show-calendar">
         <button id="prev" class="arrow left head" type="button"></button>

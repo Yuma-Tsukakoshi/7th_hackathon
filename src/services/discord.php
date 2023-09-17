@@ -2,7 +2,7 @@
 
 function send_to_discord($message)
 {
-  // Discord WebhookのURL（トークンを含む）を設定します
+  // Discord WebhookのURL（トークンを含む）を設定
   $webhookUrl = 'https://discord.com/api/webhooks/1152190733990756392/1avRdh1IoHDuXOONGoMXViT8OPKO02GAdKodXYlwJymcFOcof5K7m8xjUaMvmJ47Bqwz';
 
   $options = array(
@@ -19,7 +19,7 @@ function send_to_discord($message)
 //メッセージの内容を定義
 $message = array(
   'username' => 'harbors',
-  'content' => '塚越雄真さんが退室しました', //Discordの場合
+  'content' => '塚越雄真さんが入出しました', //Discordの場合
 );
 
 //メッセージを送信

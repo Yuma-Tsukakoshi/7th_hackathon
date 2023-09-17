@@ -1,12 +1,11 @@
 <!-- 入退室ページ フロント-->
 <?php
-session_start();
+// session_start();
 require_once(dirname(__FILE__) . '/../dbconnect.php');
 
-$uid = $_SESSION['user_id'];
 $sql = "SELECT * FROM user_visit_log WHERE id = :id";
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue(':id', $id);
+$stmt->bindValue(':id',$_COOKIE['user_id']);
 $stmt->execute();
 $post = $stmt->fetch(PDO::FETCH_ASSOC);
 

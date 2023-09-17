@@ -12,8 +12,6 @@
   const config = {
       show: 1,
   }
-  // const changeYearMonth = document.getElementById('js-changeMonth')
-  // changeYearMonth.innerHTML = thisyear + '年' + (thismonth+1) + '月'
 
   function showCalendar(year, month) {
       for (let i = 0; i < config.show; i++) {
@@ -22,7 +20,7 @@
           sec.innerHTML = calendarHtml
           document.querySelector('#calendar').appendChild(sec)
           // changeYearMonth.innerHTML = year + '年' + month + '月'
-          // month++
+          month++
           if (month > 12) {
               year++
               month = 1
@@ -57,10 +55,10 @@
                   let num = lastMonthendDayCount - startDay + d + 1
                   calendarHtml += '<td class="is-transparency">' + num + '</td>'
               } else if (year == thisyear && month == thismonth+1 && dayCount == today ){
-                  calendarHtml += '<td class="is-today">' + dayCount + '</td>'
+                  calendarHtml += '<td class="is-today" data-date='+year+'-'+month+'-'+dayCount+'>' + dayCount + '</td>'
                   dayCount++  
               }else{
-                  calendarHtml += '<td class="is-disabled" >' + dayCount + '</td>'
+                  calendarHtml += '<td class="is-disabled" data-date='+year+'-'+month+'-'+dayCount+'>' + dayCount + '</td>'
                   dayCount++
               }
           }
@@ -72,12 +70,8 @@
   }
   function setStudyDay(date = String(day).padStart(2, '0'), year = thisyear, month = thismonth) {
     return `${year}年${String(month + 1).padStart(2, '0')}月${date}日`;
-  }
+  }  
 
-  // const inputStudyDay = document.getElementById('studyDay-modalButton')
-  // inputStudyDay.value = setStudyDay()
-  
-  
   function moveCalendar(e) {
       document.querySelector('#calendar').innerHTML = ''
   
@@ -143,10 +137,16 @@
         }
       }
     })
+
     const getDate = document.querySelectorAll('.is-today,.is-disabled')
     // 取得した日にちでループを回す
     getDate.forEach(Selectable => {
         Selectable.addEventListener('click', (e) => { 
+        // 選択された日にちの年月日をコンソールで取得する
+        const selectedYear = year
+        const selectedMonth = month
+        const selectedDay = Selectable.innerHTML
+
         // is-selectedというclassをもつSelectableを取得する
         const selectedDate = document.querySelector('.is-selected')
         // is-selectedというclassをもつSelectableがあれば、is-selectedを取り除く
@@ -155,7 +155,12 @@
         }  
         // clickされたSelectableにis-selectedというclassを追加する
         Selectable.classList.add('is-selected')
-      })
+
+        // http://localhost:8080/user/participate_record.php のリンクに遷移する際のurlパラメータに年月日を追加する
+        const param = selectedYear+"-"+selectedMonth+"-"+Number(selectedDay);
+        const url = "participate_record.php?date=" + param;
+        window.location.href = url;
+      }, false)
     })
   }
   setSelectedDay()

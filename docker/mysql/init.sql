@@ -70,6 +70,7 @@ CREATE TABLE event (
   id INT AUTO_INCREMENT PRIMARY KEY,
   title VARCHAR(255) COMMENT 'イベント名',
   date DATE COMMENT '日付',
+  place VARCHAR(255) COMMENT '場所',
   start_time TIME COMMENT '開始時間',
   end_time TIME COMMENT '終了時間',
   kisei VARCHAR(255) COMMENT '期生',
@@ -79,11 +80,11 @@ CREATE TABLE event (
 ) CHARSET=utf8;
 
 -- eventテーブルにダミーデータを挿入
-INSERT INTO event (title, date, start_time,end_time, kisei, description, author_id, created_at)
+INSERT INTO event (title, date, place, start_time,end_time, kisei, description, author_id, created_at)
 VALUES
-  ('イベント1', '2023-09-20', '12:00', '14:00', '4期生', 'イベント1の説明', 1, '2023-09-10 09:30:00'),
-  ('イベント2', '2023-09-25', '11:00', '14:30', '5期生', 'イベント2の説明', 2, '2023-09-12 11:45:00'),
-  ('イベント3', '2023-09-30', '10:00', '16:00', '3期生', 'イベント3の説明', 3, '2023-09-14 13:20:00');
+  ('イベント1', '2023-09-20', 'POSSEルーム', '12:00', '14:00', '4期生', 'イベント1の説明', 1, '2023-09-10 09:30:00'),
+  ('イベント2', '2023-09-25', '屋上' ,'11:00', '14:30', '5期生', 'イベント2の説明', 2, '2023-09-12 11:45:00'),
+  ('イベント3', '2023-09-30', 'カフェスペース','10:00', '16:00', '3期生', 'イベント3の説明', 3, '2023-09-14 13:20:00');
 
 
 CREATE TABLE user_invitations (

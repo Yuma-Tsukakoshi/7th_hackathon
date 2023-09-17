@@ -1,11 +1,27 @@
 <!-- ユーザー詳細 フロント -->
 <?php
 require_once dirname(__FILE__) . '/../../dbconnect.php';
-$id = $_GET['id'];
-$sql = "SELECT * FROM users WHERE id = $id";
-$posts = $pdo->query($sql)->fetchAll();
-?>
 
+$get_id = $_GET['id'];
+$cookie_id = $_COOKIE['user_id'];
+
+$sql = "SELECT * FROM users WHERE id = $get_id";
+$posts = $pdo->query($sql)->fetchAll();
+
+$sql2 = "SELECT COUNT(*) FROM user_follower_relation WHERE user_id = :get_id AND follower_id = :cookie_id";
+$stmt = $pdo->prepare($sql2);
+$stmt->bindParam(':get_id', $get_id, PDO::PARAM_INT);
+$stmt->bindParam(':cookie_id', $cookie_id, PDO::PARAM_INT);
+$stmt->execute();
+$count = $stmt->fetchColumn();
+
+if($count>0){
+  $string='フォロー済み';
+}else{
+  $string='フォロー';
+};
+
+?>
 
 
 <!DOCTYPE html>
@@ -14,7 +30,7 @@ $posts = $pdo->query($sql)->fetchAll();
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" /> -->
+
   <link rel="stylesheet" href="../../vendor/tailwind/tailwind.output.css">
   <link rel="stylesheet" href="../../assets/styles/user_disp.css">
   <link rel="stylesheet" href="../../assets/styles/user_disp_table.css">
@@ -23,6 +39,7 @@ $posts = $pdo->query($sql)->fetchAll();
 </head>
 
 <body>
+
 <a href="./">
       <div class="p-header__logos items-center">
         <div class="p-header__header-name profile"> <i class="fa-solid fa-arrow-left"></i>プロフィール</div>
@@ -33,6 +50,14 @@ $posts = $pdo->query($sql)->fetchAll();
     <!-- webサイト名、ロゴ -->
     
   <!-- </header> -->
+<?php 
+
+if ($get_id != $cookie_id) { ?>
+<button type="button" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 follow">
+  <?= $string ?>
+
+</button>
+<?php } ?> 
 
   <div class="">
     <div class="profile_header">

@@ -225,9 +225,9 @@ header {
 }
 
 .older_members > h1{
-    padding-top: 32%;
+    padding-top: 30%;
     padding-left: 20px;
-    padding-bottom: 2%;
+    padding-bottom: 1%;
     color: #004c71;
     font-size: 25px;
     font-weight: bold;
@@ -235,9 +235,9 @@ header {
 
 .younger_members > h1{
     /* padding-top: -20%; */
-    margin-top: -40%;
+    margin-top: -45%;
     padding-left: 20px;
-    padding-bottom: 2%;
+    padding-bottom: 1%;
     color: #2E78BA;
     font-size: 25px;
     font-weight: bold;
@@ -246,7 +246,7 @@ header {
 .wrap {
     display: flex;
     align-items: center;
-    height: 150px;
+    height: 130px;
     gap: 12px;
     overflow: hidden;
     background-color: #004c71;
@@ -255,7 +255,7 @@ header {
 .wrap2 {
     display: flex;
     align-items: center;
-    height: 150px;
+    height: 130px;
     gap: 12px;
     overflow: hidden;
     background-color: #2E78BA;
@@ -268,7 +268,7 @@ header {
 .icon_slide {
     display: flex;
     gap: 12px;
-    animation: loop-slide 20s infinite linear 0s both;
+    animation: loop-slide 20s infinite linear 1s both;
 }
 
 @keyframes loop-slide {
@@ -284,7 +284,7 @@ header {
 .icon_slide2 {
     display: flex;
     gap: 12px;
-    animation: loop-slide2 20s infinite linear 0s both;
+    animation: loop-slide2 20s infinite linear 1s both;
 }
 
 @keyframes loop-slide2 {
@@ -332,6 +332,10 @@ header {
 
 
 .slide-paused:hover .icon_slide {
+    animation-play-state: paused;
+}
+
+.slide-paused:hover .icon_slide2 {
     animation-play-state: paused;
 }
 

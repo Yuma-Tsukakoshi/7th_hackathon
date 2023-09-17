@@ -73,6 +73,7 @@ td {
   margin-left: 40%;
   margin-top: 3.25%;
   z-index: 2;
+  margin-top: -30%;
 }
 .arrow.right.head{
   position: absolute;
@@ -82,6 +83,7 @@ td {
   margin-left: 58%;
   margin-top: 3.25%;
   z-index: 2;
+  margin-top: -30%;
 }
 
 /* arrow部分 */
@@ -151,7 +153,10 @@ td {
 
 @media screen and (max-width:480px){ 
   #calendar{
-    margin-top: 25%;
+    margin-top: -48%;
+  }
+  section{
+    /* margin-top: -23%; */
   }
   .arrow.left.head{
     margin-left: 20%;

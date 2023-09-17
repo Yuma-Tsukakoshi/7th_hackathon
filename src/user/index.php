@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!-- イントロページ作成場所 フロント -->
 <!DOCTYPE html>
 <html>
@@ -18,7 +22,10 @@
 
 <body>
   <!-- ヘッダー -->
-  <?php include("../components/header.php"); ?>
+  
+  <?php 
+  
+  include("../components/header.php"); ?>
   <main>
     <section class="calendar-section">
       <div class="calendar open-calendar" id="show-calendar">

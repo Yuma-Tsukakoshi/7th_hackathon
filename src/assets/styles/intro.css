@@ -1,6 +1,7 @@
 body {
     overflow: hidden;
 }
+
 /* ヘッダー */
 header {
     height: 75px;
@@ -11,6 +12,8 @@ header {
     top: 0;
     z-index: 800;
     background-color: #fff;
+    top:0;
+
 }
 
 .p-header__logos {
@@ -90,7 +93,7 @@ header {
 
 /* ハンバーガーメニュー一覧 */
 .Menu {
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
@@ -177,6 +180,8 @@ header {
     background-color: #e8e8e8;
     border-bottom: solid 1px #bbb;
     margin-top: 75px;
+    /* position: fixed;
+    top: 75px; */
 }
 
 .upbar-section__nav {

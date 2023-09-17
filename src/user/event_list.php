@@ -3,12 +3,10 @@
 require_once(dirname(__FILE__) . '/../dbconnect.php');
 // $id = $_SESSION['id'];
 // セッションでログインしているuserのidを取得
-$id = 1;
+$id = 2;
 
-$sql = "SELECT id,title,date,start_time,end_time,kisei,description,author_id,created_at FROM event INNER JOIN users ON event.id = users.id INNER JOIN user_event_relation as uer ON event.id = uer.event_id WHERE uer.user_id = $id and uer.status_id = 1";
+$sql = "SELECT event.id, event.title, event.date, event.start_time, event.end_time, event.kisei, event.description, users.name, event.created_at ,uer.id as relation_id FROM event INNER JOIN users ON event.author_id = users.id INNER JOIN user_event_relation as uer ON event.id = uer.event_id WHERE uer.user_id = $id and uer.status_id = 1";
 $posts = $pdo->query($sql)->fetchAll();
-
-
 ?>
 
 
@@ -21,35 +19,37 @@ $posts = $pdo->query($sql)->fetchAll();
   <title>イベントリスト</title>
 </head>
 
-<div class="project">
-      <div class="">
-        <h3 class="text-xl p-2 project-text w-3/4 rounded-lg text-center text-2xl">参加イベント一覧</h3>
 
-        <?php foreach($posts as $post){ ?>
-          <div class="p-5 w-full">
+<div class="bg-white py-6 sm:py-8 lg:py-12">
+  <div class="mx-auto max-w-screen-md px-4 md:px-8">
+    <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl xl:mb-12">予約イベント一覧</h2>
 
-          <a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-purple-200 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 m-3">
-            <div class="flex flex-col justify-between p-4 leading-normal w-full">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><?= $post['date'] ?></h5>
-
-                <div class="p-5 flex justify-around ">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><?= $post['title'] ?></h5>
-                <p class="mb-3 font-normal text-gray-700 text-2xl dark:text-gray-400">  <?= $post['kisei']?></p>
-
-                </div>
-
-            </div>
-          </a>
-
-        </div>
-
-        <?} ?>
+<?php foreach($posts as $post){ ?>
 
 
+    <div class="mb-4 flex items-center justify-between border-t border-b py-4">
+      <div class="flex flex-col gap-0.5">
+        <span class="block font-bold lg:text-3xl"><?= $post['title']?></span>
+
+        
+
+        <span class="block text-sm text-gray-500"><?= $post['date']?></span>
+        <span class="block text-sm text-gray-500"><?= $post['start_time']?>〜<?= $post['end_time']?></span>
+        <span class="block text-sm text-gray-500"></span>
       </div>
+      <p><?= $post['kisei']?></p>
+      <p><?= $post['name']?></p>
+      <p><?= $post['description']?></p>
+      <form action="">
+      <a href="../event/event_info/event_delete.php?id=<?= $post['relation_id']?>" class="inline-block rounded-lg border bg-white px-4 py-2 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-100 focus-visible:ring active:bg-gray-200 md:px-8 md:py-3 md:text-base">キャンセル</a>
+      </form>
     </div>
-  </div>
-  .
+
+
+<?} ?>
+</div>
+</div>
+</div>
 
 
   

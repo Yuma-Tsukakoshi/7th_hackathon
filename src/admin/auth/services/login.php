@@ -16,6 +16,8 @@ if (isset($_POST['mail']) && isset($_POST['password'])) {
         if ($row_cnt > 0 && password_verify($password, $result['password'])){ // パスワードを検証
             session_regenerate_id(TRUE); // セッションidを再発行
             $_SESSION['unique_email'] = $_POST['mail'];
+            $_SESSION['user_id'] = $result['id'];
+            
             header('Location: ../../../user/index.php');
         } else {
             $_SESSION['error_message'] = 'Eメールもしくはパスワードが、間違っています';

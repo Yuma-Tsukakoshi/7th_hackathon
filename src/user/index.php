@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!-- イントロページ作成場所 フロント -->
 <!DOCTYPE html>
 <html>
@@ -18,7 +22,10 @@
 
 <body>
   <!-- ヘッダー -->
-  <?php include("../components/header.php"); ?>
+  
+  <?php 
+  
+  include("../components/header.php"); ?>
   <main>
     <!-- 3, 4期生の入室状態確認機能 -->
     <section class="status-section">

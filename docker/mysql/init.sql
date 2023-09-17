@@ -30,9 +30,20 @@ CREATE TABLE users(
 
 INSERT INTO users (name, kisei, image, tate, yoko, brosis, highschool, college, faculty, grade, birthday, circle, station, nickname, instagram,github,harborsdate, hobby, message, user_exist, created_at)
 VALUES
-  ('田中太郎', '4期生', 'path/to/image1.jpg', 'A', 'B', 'ブラシスX', '高校A', '大学X', '学部A', '1年', '2000-01-15', 'サークル1', '最寄り駅A', 'ニックネーム1','https://www.instagram.com/','b.com/Yuma-Tsukakoshi/2023_hackathon_project/issues' ,'月曜日 18:00', '趣味A', '自己紹介1', '1', '2023-09-17 10:30:00'),
-  ('山田花子', '5期生', 'path/to/image2.jpg', 'B', 'C', 'ブラシスY', '高校B', '大学Y', '学部B', '2年', '1999-03-20', 'サークル2', '最寄り駅B', 'ニックネーム2' ,'https://www.instagram.com/','b.com/Yuma-Tsukakoshi/2023_hackathon_project/issues','水曜日 19:30', '趣味B', '自己紹介2', '0', '2023-09-16 15:45:00'),
-  ('佐藤次郎', '3期生', 'path/to/image3.jpg', 'C', 'A', 'ブラシスZ', '高校C', '大学Z', '学部C', '3年', '1998-07-10', 'サークル3', '最寄り駅C', 'ニックネーム3','https://www.instagram.com/','b.com/Yuma-Tsukakoshi/2023_hackathon_project/issues','金曜日 17:15', '趣味C', '自己紹介3', '0', '2023-09-15 20:20:00');
+  ('田中太郎1', '4期生', 'path/to/image1.jpg', 'A', 'B', 'ブラシスX', '高校A', '大学X', '学部A', '1年', '2000-01-15', 'サークル1', '最寄り駅A', 'ニックネーム1', 'https://www.instagram.com/', 'b.com/Yuma-Tsukakoshi/2023_hackathon_project/issues', '月曜日 18:00', '趣味A', '
+
+こんにちは！私は太郎と言います。28歳で、東京に住んでいます。現在、私はソフトウェアエンジニアとして働いています。Webアプリケーションの開発に携わり、ユーザー体験を向上させるために日々努力しています。チームでの協力が私の仕事の中心です。', '1', '2023-09-17 10:30:00'),
+  ('山田花子1', '5期生', 'path/to/image2.jpg', 'B', 'C', 'ブラシスY', '高校B', '大学Y', '学部B', '2年', '1999-03-20', 'サークル2', '最寄り駅B', 'ニックネーム2', 'https://www.instagram.com/', 'b.com/Yuma-Tsukakoshi/2023_hackathon_project/issues', '水曜日 19:30', '趣味B', '自己紹介2', '0', '2023-09-16 15:45:00'),
+  ('佐藤次郎1', '3期生', 'path/to/image3.jpg', 'C', 'A', 'ブラシスZ', '高校C', '大学Z', '学部C', '3年', '1998-07-10', 'サークル3', '最寄り駅C', 'ニックネーム3', 'https://www.instagram.com/', 'b.com/Yuma-Tsukakoshi/2023_hackathon_project/issues', '金曜日 17:15', '趣味C', '自己紹介3', '0', '2023-09-15 20:20:00'),
+  ('田中太郎2', '4期生', 'path/to/image1.jpg', 'A', 'B', 'ブラシスX', '高校A', '大学X', '学部A', '1年', '2000-01-15', 'サークル1', '最寄り駅A', 'ニックネーム1', 'https://www.instagram.com/', 'b.com/Yuma-Tsukakoshi/2023_hackathon_project/issues', '月曜日 18:00', '趣味A', '自己紹介1', '1', '2023-09-17 10:30:00'),
+  ('山田花子2', '5期生', 'path/to/image2.jpg', 'B', 'C', 'ブラシスY', '高校B', '大学Y', '学部B', '2年', '1999-03-20', 'サークル2', '最寄り駅B', 'ニックネーム2', 'https://www.instagram.com/', 'b.com/Yuma-Tsukakoshi/2023_hackathon_project/issues', '水曜日 19:30', '趣味B', '自己紹介2', '0', '2023-09-16 15:45:00'),
+  ('佐藤次郎2', '3期生', 'path/to/image3.jpg', 'C', 'A', 'ブラシスZ', '高校C', '大学Z', '学部C', '3年', '1998-07-10', 'サークル3', '最寄り駅C', 'ニックネーム3', 'https://www.instagram.com/', 'b.com/Yuma-Tsukakoshi/2023_hackathon_project/issues', '金曜日 17:15', '趣味C', '自己紹介3', '0', '2023-09-15 20:20:00'),
+  ('田中太郎3', '4期生', 'path/to/image1.jpg', 'A', 'B', 'ブラシスX', '高校A', '大学X', '学部A', '1年', '2000-01-15', 'サークル1', '最寄り駅A', 'ニックネーム1', 'https://www.instagram.com/', 'b.com/Yuma-Tsukakoshi/2023_hackathon_project/issues', '月曜日 18:00', '趣味A', '自己紹介1', '1', '2023-09-17 10:30:00'),
+  ('山田花子3', '5期生', 'path/to/image2.jpg', 'B', 'C', 'ブラシスY', '高校B', '大学Y', '学部B', '2年', '1999-03-20', 'サークル2', '最寄り駅B', 'ニックネーム2', 'https://www.instagram.com/', 'b.com/Yuma-Tsukakoshi/2023_hackathon_project/issues', '水曜日 19:30', '趣味B', '自己紹介2', '0', '2023-09-16 15:45:00'),
+  ('佐藤次郎3', '3期生', 'path/to/image3.jpg', 'C', 'A', 'ブラシスZ', '高校C', '大学Z', '学部C', '3年', '1998-07-10', 'サークル3', '最寄り駅C', 'ニックネーム3', 'https://www.instagram.com/', 'b.com/Yuma-Tsukakoshi/2023_hackathon_project/issues', '金曜日 17:15', '趣味C', '自己紹介3', '0', '2023-09-15 20:20:00'),
+  ('田中太郎4', '4期生', 'path/to/image1.jpg', 'A', 'B', 'ブラシスX', '高校A', '大学X', '学部A', '1年', '2000-01-15', 'サークル1', '最寄り駅A', 'ニックネーム1', 'https://www.instagram.com/', 'b.com/Yuma-Tsukakoshi/2023_hackathon_project/issues', '月曜日 18:00', '趣味A', '自己紹介1', '1', '2023-09-17 10:30:00'),
+  ('山田花子4', '5期生', 'path/to/image2.jpg', 'B', 'C', 'ブラシスY', '高校B', '大学Y', '学部B', '2年', '1999-03-20', 'サークル2', '最寄り駅B', 'ニックネーム2', 'https://www.instagram.com/', 'b.com/Yuma-Tsukakoshi/2023_hackathon_project/issues', '水曜日 19:30', '趣味B', '自己紹介2', '0', '2023-09-16 15:45:00'),
+  ('佐藤次郎4', '3期生', 'path/to/image3.jpg', 'C', 'A', 'ブラシスZ', '高校C', '大学Z', '学部C', '3年', '1998-07-10', 'サークル3', '最寄り駅C', 'ニックネーム3', 'https://www.instagram.com/', 'b.com/Yuma-Tsukakoshi/2023_hackathon_project/issues', '金曜日 17:15', '趣味C', '自己紹介3', '0', '2023-09-15 20:20:00');
 
 CREATE TABLE user_follower_relation (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -44,10 +55,18 @@ CREATE TABLE user_follower_relation (
 -- user_follower_relationテーブルにダミーデータを挿入
 INSERT INTO user_follower_relation (user_id, follower_id, status_id)
 VALUES
-  (1, 2, 1), -- ユーザー1がユーザー2をフォロー中 (status_id=1)
-  (2, 1, 1), -- ユーザー2がユーザー1をフォロー中 (status_id=1)
-  (1, 3, 0), -- ユーザー1がユーザー3をフォロー解除 (status_id=2)
-  (3, 2, 1); -- ユーザー3がユーザー2をフォロー中 (status_id=1)
+  (1, 2, 1),
+  (2, 1, 1),
+  (1, 3, 0),
+  (3, 2, 1),
+  (2, 3, 1),
+  (3, 1, 0),
+  (4, 5, 1),
+  (5, 4, 1),
+  (4, 6, 0),
+  (6, 5, 1);
+
+
 
 
 CREATE TABLE user_event_relation (
@@ -57,13 +76,20 @@ CREATE TABLE user_event_relation (
   status_id boolean COMMENT '状態のID'
 ) CHARSET=utf8;
 
--- user_event_relationテーブルにダミーデータを挿入
+
+  -- user_event_relationテーブルにダミーデータを10件ずつ挿入
 INSERT INTO user_event_relation (user_id, event_id, status_id)
 VALUES
-  (1, 1, 1), -- ユーザー1がイベント1に参加中 (status_id=1)
-  (2, 2, 1), -- ユーザー2がイベント2に参加中 (status_id=1)
-  (1, 3, 0), -- ユーザー1がイベント3の参加をキャンセル (status_id=2)
-  (3, 1, 1); -- ユーザー3がイベント1に参加中 (status_id=1)
+  (1, 1, 1),
+  (2, 2, 1),
+  (1, 3, 0),
+  (3, 1, 1),
+  (2, 3, 1),
+  (3, 2, 0),
+  (4, 1, 1),
+  (5, 2, 0),
+  (6, 3, 1),
+  (7, 1, 0);
 
 
 CREATE TABLE event (
@@ -98,6 +124,13 @@ CREATE TABLE user_invitations (
 -- user_invitationsテーブルにダミーデータを挿入
 INSERT INTO user_invitations (mail, password, user_id, created_at)
 VALUES
-  ('invite1@example.com', '$2a$12$byHvyvLQINYVC32wSk7INu6vUHsfUre.OWG9IIvNALuDEDVYxvgPS', 1, '2023-09-05 08:00:00'),
-  ('invite2@example.com', '$2a$12$byHvyvLQINYVC32wSk7INu6vUHsfUre.OWG9IIvNALuDEDVYxvgPS', 2, '2023-09-06 09:30:00'),
-  ('invite3@example.com', '$2a$12$byHvyvLQINYVC32wSk7INu6vUHsfUre.OWG9IIvNALuDEDVYxvgPS', 3, '2023-09-07 10:45:00');
+  ('invite4@example.com', '$2a$12$byHvyvLQINYVC32wSk7INu6vUHsfUre.OWG9IIvNALuDEDVYxvgPS', 4, '2023-10-12 08:00:00'),
+  ('invite5@example.com', '$2a$12$byHvyvLQINYVC32wSk7INu6vUHsfUre.OWG9IIvNALuDEDVYxvgPS', 5, '2023-10-14 09:30:00'),
+  ('invite6@example.com', '$2a$12$byHvyvLQINYVC32wSk7INu6vUHsfUre.OWG9IIvNALuDEDVYxvgPS', 6, '2023-10-16 10:45:00'),
+  ('invite7@example.com', '$2a$12$byHvyvLQINYVC32wSk7INu6vUHsfUre.OWG9IIvNALuDEDVYxvgPS', 7, '2023-10-18 11:15:00'),
+  ('invite8@example.com', '$2a$12$byHvyvLQINYVC32wSk7INu6vUHsfUre.OWG9IIvNALuDEDVYxvgPS', 8, '2023-10-20 12:30:00'),
+  ('invite9@example.com', '$2a$12$byHvyvLQINYVC32wSk7INu6vUHsfUre.OWG9IIvNALuDEDVYxvgPS', 9, '2023-10-22 13:45:00'),
+  ('invite10@example.com', '$2a$12$byHvyvLQINYVC32wSk7INu6vUHsfUre.OWG9IIvNALuDEDVYxvgPS', 10, '2023-10-24 14:15:00'),
+  ('invite11@example.com', '$2a$12$byHvyvLQINYVC32wSk7INu6vUHsfUre.OWG9IIvNALuDEDVYxvgPS', 11, '2023-10-26 15:00:00'),
+  ('invite12@example.com', '$2a$12$byHvyvLQINYVC32wSk7INu6vUHsfUre.OWG9IIvNALuDEDVYxvgPS', 12, '2023-10-28 16:30:00'),
+  ('invite13@example.com', '$2a$12$byHvyvLQINYVC32wSk7INu6vUHsfUre.OWG9IIvNALuDEDVYxvgPS', 13, '2023-10-30 17:45:00');

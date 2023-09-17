@@ -34,24 +34,56 @@ header {
     border: solid 2px rgb(46, 119, 186);
 }
 
-/* .p-header__button {
-    appearance: none;
-    background: transparent;
-    border-radius: 0;
-    color: inherit;
-    font: inherit;
-    margin: 0;
-    padding: 0;
-    text-align: inherit;
-    text-transform: inherit;
-    vertical-align: middle;
-    height: 40px;
-    right: 19px;
-    top: 8px;
-    width: 40px;
+/* ハンバーガーメニューの線 */
+.Menu-CloseBtn {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 2px;
+    background-color: rgb(46, 119, 186);
+    position: relative;
+    transition: ease 0.4s;
+    /*ハンバーガーメニュークリック時の三本線の動きを遅延*/
+    display: block;
+}
+
+.hamburger span:nth-child(1) {
+    top: 0;
+}
+
+.hamburger span:nth-child(2) {
+    margin: 8px 0;
+}
+
+.hamburger span:nth-child(3) {
+    top: 0;
+}
+
+/* ハンバーガーメニュークリック後のスタイル */
+/* .Menu.active {
+    transform: translateX(0);
 } */
 
-/* ハンバーガーメニュー */
+.Menu-CloseBtn.hamburger.active span:nth-child(1) {
+    top: 5px;
+    transform: rotate(45deg);
+}
+
+.Menu-CloseBtn.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.Menu-CloseBtn.hamburger.active span:nth-child(3) {
+    top: -13px;
+    transform: rotate(-45deg);
+}
+
+/* ハンバーガーメニュー一覧 */
 .Menu {
     position: relative;
     top: 0;
@@ -61,7 +93,7 @@ header {
     color: #111;
 }
 
-.Menu.active{
+.Menu.active {
     background: rgba(0, 0, 0, 0.2);
     z-index: 999;
 }
@@ -72,6 +104,10 @@ header {
     right: 0;
     z-index: 10000;
     padding: 8px;
+}
+
+.Menu-CloseBtn.Menu.active {
+    transform: translateX(0);
 }
 
 .Menu-CloseBtn-Icon {

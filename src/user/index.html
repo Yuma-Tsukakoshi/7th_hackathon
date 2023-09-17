@@ -21,6 +21,7 @@
         <a href="./">
             <div class="p-header__logos">
                 <div class="p-header__mark">
+                    <!-- まだ相対パスは変えていないので、ヘッダーはcomponentsからは読み込めない -->
                     <img src="../assets/img/6.png" alt="ロゴ" height="90px" />
                 </div>
                 <div class="p-header__website-name">HarborS System</div>
@@ -31,15 +32,18 @@
             入室中
         </div>
     </header>
-        <!-- ハンバーガーメニュー -->
-        <!-- <button class="p-header__button" id="js-headerButton"></button> -->
-        <nav class="Menu" id="js-menulist">
-            <button type="button" class="Menu-CloseBtn"  id="js-menu-closebtn">
-                <svg xmlns="http://www.w3.org/2000/svg" class="Menu-CloseBtn-Icon" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
+    <!-- ハンバーガーメニュー -->
+    <!-- <button class="p-header__button" id="js-headerButton"></button> -->
+    <button type="button" class="Menu-CloseBtn hamburger"  id="js-menu-closebtn">
+        <span></span>
+        <span></span>
+        <span></span>
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" class="Menu-CloseBtn-Icon" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg> -->
+    </button>
+    <nav class="Menu" id="js-menulist">
             <ul class="Menu-Group" id="js-Menu-Group">
                 <li class="Menu-Group-Item">
                     <a class="Menu-Group-Item-Link" href="/">

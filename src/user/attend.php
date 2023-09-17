@@ -20,6 +20,7 @@ $post = $stmt->fetch(PDO::FETCH_ASSOC);*/
   <link href="../vendor/tailwind/tailwind.output.css" rel="stylesheet">
   <link rel="stylesheet" href="../assets/styles/intro.css">
   <link rel="stylesheet" href="../assets/styles/attend.css">
+  <script src="../assets/js/attend.js" defer></script>
   <title>入退室画面</title>
 </head>
 
@@ -30,7 +31,7 @@ $post = $stmt->fetch(PDO::FETCH_ASSOC);*/
       <img src="../assets/img/IMG_1317.PNG" alt="">
     </div>
     <div class="wave_animation">
-    <svg class="svg" width="720" height="100">
+    <svg class="svg" width="100%" height="100">
   <defs>
     <!-- パス共通（左右に広げている。微調整） -->
     <path id="path_nami22" d="中略">
@@ -71,14 +72,16 @@ $post = $stmt->fetch(PDO::FETCH_ASSOC);*/
     </pattern>
   </defs>
   <!-- パターンで塗りつぶす、大きさ調整 -->
-  <rect x="0" y="0" width="720" height="100" fill="url(#ptn_nami22_a)"></rect>
-  <rect x="0" y="0" width="480" height="110" fill="url(#ptn_nami22_b)" transform="scale(3.5,1)"></rect>
-  <rect x="0" y="0" width="360" height="120" fill="url(#ptn_nami22_c)" transform="scale(2,1)"></rect>
+  <rect x="0" y="0" width="100%" height="100" fill="url(#ptn_nami22_a)"></rect>
+  <rect x="0" y="0" width="100%" height="110" fill="url(#ptn_nami22_b)" transform="scale(3.5,1)"></rect>
+  <rect x="0" y="0" width="100%" height="120" fill="url(#ptn_nami22_c)" transform="scale(2,1)"></rect>
 </svg>
 
     </div>
     <div class="attend_button">
-      <label><button><b>入室する</b></button><br></label>
+      <button class="attend_button_click" id="js-attend_button">
+        <span class="attend_button_click_item" id="js-attend_text">入室する</span>
+      </button>
     </div>
   </div>
 </body>

@@ -15,6 +15,7 @@ const headerText = document.getElementById('js-header_statusText');
 
 // アンカーの下のボタン
 text.addEventListener('click', () => {
+    console.log('clicked');
     const newText = text.classList.toggle('active') ? '退室する' : '入室する';
     text.textContent = newText;
     // ヘッダー

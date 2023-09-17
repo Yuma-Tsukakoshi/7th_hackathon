@@ -13,7 +13,7 @@
     </a>
     <div class="p-header__status" id="js-header_status">
         <!-- ステータス「入室中」「退室中」 -->
-        <span id="js-header_statusText"></span>
+        <span id="js-header_statusText">退室中</span>
     </div>
 </header>
 <!-- ハンバーガーボタン -->
@@ -32,7 +32,7 @@
         </li>
         <li class="Menu-Group-Item">
 
-            <a class="Menu-Group-Item-Link" href="../user/user_info/user_disp.php?id=<?= $_SESSION['user_id']?>">
+            <a class="Menu-Group-Item-Link" href="../user/user_info/user_disp.php?id=<?= $_COOKIE['user_id']?>">
                 <span>プロフィール</span>
             </a>
         </li>

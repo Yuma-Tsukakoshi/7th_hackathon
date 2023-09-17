@@ -67,7 +67,7 @@ VALUES
   CREATE TABLE user_visit_log (
   id INT AUTO_INCREMENT PRIMARY KEY,
   user_id INT COMMENT 'ユーザーID',
-  created_at DATETIME COMMENT '発行日時'
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '発行日時'
 ) CHARSET=utf8;
 
 INSERT INTO user_visit_log (user_id, created_at)

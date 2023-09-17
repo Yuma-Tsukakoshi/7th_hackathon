@@ -66,14 +66,11 @@ VALUES
   (4, 6, 0),
   (6, 5, 1);
 
-
-
-
 CREATE TABLE user_event_relation (
   id INT AUTO_INCREMENT PRIMARY KEY,
   user_id INT COMMENT 'ユーザーID',
   event_id INT COMMENT 'イベントID',
-  status_id boolean COMMENT '状態のID'
+  status_id boolean DEFAULT 0 COMMENT '状態のID'
 ) CHARSET=utf8;
 
 

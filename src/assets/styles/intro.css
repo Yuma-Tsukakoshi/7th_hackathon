@@ -30,6 +30,7 @@ header {
     height: 75px;
 }
 
+/* ヘッダーの入退室のステータス */
 .p-header__status {
     width: 20%;
     height: 30px;
@@ -39,6 +40,13 @@ header {
     color: rgb(46, 119, 186);
     border-radius: 5px;
     border: solid 2px rgb(46, 119, 186);
+}
+
+/* なぜか効かないコード↓ */
+.p-header__status.active {
+    color: rgb(134, 134, 134);
+    background-color: #bbb;
+    border: solid 2px rgb(134, 134, 134);
 }
 
 /* ハンバーガーメニューの線 */

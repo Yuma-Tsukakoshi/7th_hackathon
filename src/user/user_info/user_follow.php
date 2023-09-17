@@ -13,5 +13,5 @@ $stmt->bindValue(':status_id', 1, PDO::PARAM_INT); // status_idに1を設定
 $stmt->execute();
 
 // フォローが完了したら、リダイレクトなど適切な処理を行うことができます
-header('Location: ../../user_disp.php');
+header('Location: ../../user/user_info/user_disp.php?id=' . $get_id);
 ?>

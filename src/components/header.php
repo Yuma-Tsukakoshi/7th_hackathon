@@ -11,9 +11,9 @@
             <div class="p-header__website-name">HarborS System</div>
         </div>
     </a>
-    <div class="p-header__status">
+    <div class="p-header__status" id="js-header_status">
         <!-- ステータス「入室中」「退室中」 -->
-        入室中
+        <span id="js-header_statusText"></span>
     </div>
 </header>
 <!-- ハンバーガーボタン -->

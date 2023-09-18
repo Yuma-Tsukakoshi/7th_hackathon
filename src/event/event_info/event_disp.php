@@ -27,8 +27,6 @@ $event_users = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../../vendor/tailwind/tailwind.output.css">
-  <link rel="stylesheet" href="../../admin/admin.css">
-  <link rel="stylesheet" href="../assets/styles/badge.css">
   <title>イベント詳細</title>
 </head>
 
@@ -87,12 +85,14 @@ $event_users = $stmt->fetchAll(PDO::FETCH_ASSOC);
           </tr>
         </tbody>
       </table>
-    
-      <ul>
-        <p>参加者</p>
+
+      <ul scope="row" class="px-2 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+        参加者
         <?php foreach ($event_users as $event_user) { ?>
-          <li><?= $event_user['kisei'] ?>  : <?= $event_user['name'] ?></li>
-          <?php } ?>
+          <li class="px-1 py-2 text-gray-900 whitespace-nowrap dark:text-white text-center translate-y-1/2 translate-x-1/2">
+            <?= $event_user['kisei'] ?> : <?= $event_user['name'] ?>
+          </li>
+        <?php } ?>
       </ul>
     </div>
   </div>

@@ -65,7 +65,7 @@ if ($count > 0) {
     </div>
     <div class="profile_icon">
       <div class="icon_circle_background"></div>
-      <div class="profile_img"><img src="../../assets/img/LINE_ALBUM_3期生アイコン画像_230917_10.jpg" alt=""></div>
+      <div class="profile_img"><img src="<?= '../'.$posts[0]['image'] ?>" alt=""></div>
     </div>
     <div class="img_filter"></div>
     <div class="anchor_img"><img src="../../assets/img/IMG_1313.PNG" alt=""></div>

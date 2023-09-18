@@ -114,7 +114,6 @@ header {
     z-index: 999;
     position: fixed;
     height: 100vh;
-    position: fixed;
     z-index: 1000;
 }
 
@@ -185,9 +184,6 @@ header {
     width: 100%;
     background-color: #e8e8e8;
     border-bottom: solid 1px #bbb;
-    /* margin-top: 75px; */
-    /* position: fixed;
-    top: 75px; */
     position: fixed;
     top: 60px;
     z-index: 800;

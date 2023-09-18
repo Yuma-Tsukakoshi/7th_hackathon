@@ -1,12 +1,14 @@
 
 @media screen and (min-width: 480px) {
     /* html要素にはdisplay:blockを指定する必要はありません */
-    
+    html{
+        height: 700px;
+    }
     .container {
         display: flex; /* displayをflexに変更 */
         margin: 0 auto;
         align-items: center;
-        height: 100vh;
+        
         width: 456px; /* 画面の幅いっぱいに表示 */
         background-color: lightblue;
     }

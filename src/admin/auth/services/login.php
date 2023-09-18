@@ -17,7 +17,7 @@ if (isset($_POST['mail']) && isset($_POST['password'])) {
             // $_SESSION['unique_email'] = $_POST['mail'];
             // $_SESSION['user_id'] = $result['id'];
             setcookie('user_id', $result['id'], time() + 60 * 60 * 24 * 14, '/');
-            header('Location: ../../../user/index.php');
+            header('Location: ../../../user/attend.php');
         } else {
             $_SESSION['error_message'] = 'Eメールもしくはパスワードが、間違っています';
             header('Location: ../../auth/login.php'); // ログインページにリダイレクト

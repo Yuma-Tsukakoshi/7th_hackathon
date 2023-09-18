@@ -45,7 +45,7 @@ $post = $stmt->fetch(PDO::FETCH_ASSOC);
   </main>
   <?php include(dirname(__FILE__) . '/../components/header.php'); ?>
   <div class="contents">
-    <div class="anchor_animation">
+    <div class="anchor_animation" id="js-anchor_animation">
       <img src="../assets/img/IMG_1317.PNG" alt="">
     </div>
     <div class="wave_animation">

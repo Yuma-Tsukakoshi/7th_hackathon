@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-big {
+    @apply rounded-full  px-6 py-2 text-base font-bold text-white drop-shadow-lg hover:scale-95 hover:opacity-70 hover:transition-all;
+  }
+  .btn-big-disable {
+    @apply rounded-full bg-gradient-to-tr from-gray-300 to-gray-200 px-6 py-2 text-base font-bold text-white;
+  }
+  .label-hover{
+    @apply inline-block pl-[0.15rem] hover:cursor-pointer;
+  }
+  .input-text{
+    @apply block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0;
+  }
+
+}
+
+@layer utilities {
+    .blue {
+      @apply bg-gradient-to-br from-cyan-300 to-blue-700 ;
+    }
+    .cyan {
+      @apply bg-gradient-to-br from-blue-500 to-cyan-500 ;
+    }
+    .red {
+      @apply bg-gradient-to-br from-orange-300 to-red-700 ;
+    }
+    .orange {
+      @apply bg-gradient-to-br from-red-500 to-orange-500 ;
+    }
+}

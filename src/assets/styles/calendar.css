@@ -1,0 +1,187 @@
+
+@media screen and (min-width: 480px) {
+  /* html要素にはdisplay:blockを指定する必要はありません */
+  
+  html {
+      display: flex; /* displayをflexに変更 */
+      margin: 0 auto;
+      align-items: center;
+      height: 100vh;
+      width: 450px; /* 画面の幅いっぱいに表示 */
+      background-color: lightblue;
+  }
+}
+
+
+html{
+  height: 150vh;
+}
+
+.calendar-title{
+  text-align: center;
+  position: relative;
+}
+#calendar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+section {
+  /* margin: 10px; */
+}
+h1 {
+  font-size: 18px;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+td {
+  padding: 12px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  width: 30px;
+  height: 30px;
+}
+.date{
+  color: #6ba0f0;
+  font-weight: bold;
+}
+.is-transparency{
+  opacity: 0;
+}
+.is-disabled {
+  /* color: #ccc; */
+  font-weight: bold;
+  cursor: pointer;
+}
+.is-today{
+  cursor: pointer;
+  font-weight: bold;
+}
+.is-available {
+  font-weight: bold;
+}
+.is-selected{
+  background-color: #0074BB;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+.decision-button{
+  color: #fff;
+  background: linear-gradient(to right,#0074BB 0%, #02CDFB 100%); 
+  border-radius: 30px;
+  padding: 15px 0px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 4px 5px 5px 0 #9bdceb;
+  border: none;
+  margin: 0px auto 0;
+  width: 100px;
+}
+.arrow.left.head{
+  position: absolute;
+  float: left;
+  outline: none;
+  border: none;
+  margin-left: 40%;
+  margin-top: 3.25%;
+  z-index: 2;
+  margin-top: -30%;
+}
+.arrow.right.head{
+  position: absolute;
+  float: right;
+  outline: none;
+  border: none;
+  margin-left: 58%;
+  margin-top: 3.25%;
+  z-index: 2;
+  margin-top: -30%;
+}
+
+/* arrow部分 */
+.arrow{
+  position: relative;
+  display: inline-block;
+  padding-left: 20px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.arrow:hover{
+  opacity: 1;
+}
+
+.arrow.left::before{
+  content: '';
+  width: 12px;
+  height: 12px;
+  border: 0px;
+  margin-right: 5px;
+  border-top: solid 4px #0074BB;
+  border-right: solid 4px #0074BB;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(-135deg);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -35px;
+}
+
+.arrow.right::before{
+  content: '';
+  width: 12px;
+  height: 12px;
+  border: 0px;
+  margin-left: 3px;
+  border-top: solid 4px #0074BB;
+  border-right: solid 4px #0074BB;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -35px;
+}
+
+.arrow.left.head{
+  position: absolute;
+  float: left;
+  outline: none;
+  border: none;
+  margin-left: 40%;
+  margin-top: 3.25%;
+  z-index: 2;
+}
+.arrow.right.head{
+  position: absolute;
+  float: right;
+  outline: none;
+  border: none;
+  margin-left: 58%;
+  margin-top: 3.25%;
+  z-index: 2;
+}
+
+@media screen and (max-width:480px){ 
+  #calendar{
+    margin-top: -40%;
+  }
+  section{
+    /* margin-top: -23%; */
+  }
+  .arrow.left.head{
+    margin-left: 20%;
+    margin-top: 9.5%;
+  }  
+  .arrow.right.head{
+    margin-left: 68%;
+    margin-top: 9.5%;
+  }
+}

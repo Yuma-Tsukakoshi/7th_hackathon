@@ -5,10 +5,11 @@
     <a href="../user/index.php">
         <div class="p-header__logos">
             <div class="p-header__mark">
-                <!-- まだ相対パスは変えていないので、ヘッダーはcomponentsからは読み込めない -->
-                <img src="../assets/img/6.png" alt="ロゴ" height="90px" />
+                <img src="../assets/img/portpeer-logo.jpg" alt="ロゴ" />
             </div>
-            <div class="p-header__website-name">HarborS System</div>
+            <div>
+                <img src="../assets/img/portpeer-textlogo.png" alt="ポートピア" class="p-header__website-name"/>
+            </div>
         </div>
     </a>
     <div class="p-header__status" id="js-header_status">

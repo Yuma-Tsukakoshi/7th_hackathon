@@ -6,12 +6,14 @@ require_once(dirname(__FILE__) . '/../../dbconnect.php');
 $sql = "SELECT * FROM event WHERE id = :eid";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':eid', $_GET['id']);
-$event = $stmt->execute();
+$stmt->execute();
+$event = $stmt->fetch(PDO::FETCH_ASSOC);
+// var_dump($event);
 
 // イベント参加者情報の取得
-$sql = "SELECT * FROM user_event_relation WHERE event_id = :eid INNER JOIN users ON user_event_relation.user_id = users.id";
+$sql = "SELECT * FROM user_event_relation INNER JOIN users ON user_event_relation.user_id = users.id WHERE event_id = :eid";
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue(':eid', $eid);
+$stmt->bindValue(':eid', $_GET['id']);
 $stmt->execute();
 $event_users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -40,102 +42,58 @@ $event_users = $stmt->fetchAll(PDO::FETCH_ASSOC);
               イベント名
             </th>
             <td class="px-6 py-4 text-xl w-1/2">
-              <?= $event['name'] ?>
+              <?= $event['title'] ?>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              期生
+            </th>
+            <td class="px-6 py-4">
+              <?= $event['kisei'] ?>
             </td>
           </tr>
           <tr class="bg-white">
             <th scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-l">
-              あだ名
+              日付
             </th>
             <td class="px-6 py-4 text-l">
-              <?= $event[0]['nickname'] ?>
-            </td>
-          </tr>
-
-          <tr>
-            <th scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-              縦もく
-            </th>
-            <td class="px-6 py-4">
-              <?= $event[0]['tate'] ?>
-            </td>
-
-          </tr>
-          <tr>
-            <th scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-              横もく
-            </th>
-            <td class="px-6 py-4">
-              <?= $event[0]['yoko'] ?>
-            </td>
-
-          </tr>
-          <tr>
-            <th scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-              ブラシス
-            </th>
-            <td class="px-6 py-4">
-              <?= $event[0]['brosis'] ?>
+              <?= $event["date"] ?>
             </td>
           </tr>
           <tr>
             <th scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-              大学
+              場所
             </th>
             <td class="px-6 py-4">
-              <?= $event[0]['college'] . $event[0]['faculty'] ?>
+              <?= $event['place'] ?>
             </td>
           </tr>
           <tr>
             <th scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-              誕生日
+              時間
             </th>
             <td class="px-6 py-4">
-              <?= $event[0]['birthday'] ?>
+              <span class="block text-sm text-gray-500"><?= substr($event["start_time"], 0, 5); ?> ～ <?= substr($event["end_time"], 0, 5) ?></span>
             </td>
           </tr>
           <tr>
             <th scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-              最寄り駅
+              概要説明
             </th>
             <td class="px-6 py-4">
-              <?= $event[0]['station'] ?>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-              兼サー
-            </th>
-            <td class="px-6 py-4">
-              <?= $posts[0]['circle'] ?>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-              趣味
-            </th>
-            <td class="px-2 py-4">
-              <?= $posts[0]['hobby'] ?>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-              ハバズによくいる日時
-            </th>
-            <td class="px-6 py-4">
-              <?= $posts[0]['harborsdate'] ?>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-              自己紹介
-            </th>
-            <td class="px-6 py-4">
-              <?= $posts[0]['message'] ?>
+              <?= $event['description'] ?>
             </td>
           </tr>
         </tbody>
       </table>
+    
+      <ul>
+        <p>参加者</p>
+        <?php foreach ($event_users as $event_user) { ?>
+          <li><?= $event_user['kisei'] ?>  : <?= $event_user['name'] ?></li>
+          <?php } ?>
+      </ul>
     </div>
   </div>
 </body>

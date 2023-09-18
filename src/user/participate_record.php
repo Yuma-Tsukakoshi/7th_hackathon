@@ -51,8 +51,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <span class="block text-sm text-gray-500"></span>
                       </div>
                       <p><?= $event['kisei'] ?></p>
-
-                      <a href="http://localhost:8080/event/event_info/event_disp.php?<?= $event['id']?>">
+                      <a href="http://localhost:8080/event/event_info/event_disp.php?id=<?= $event['id']?>">
                         <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full">
                           詳細
                         </span>

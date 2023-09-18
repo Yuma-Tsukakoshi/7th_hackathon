@@ -26,11 +26,17 @@ $event_users = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/styles/participate.css">
   <link rel="stylesheet" href="../../vendor/tailwind/tailwind.output.css">
   <title>イベント詳細</title>
 </head>
 
 <body>
+  <a href="http://localhost:8080/user/participate_record.php?date=<?= $_GET['date']?>">
+    <div class="p-header__logos items-center">
+      <div class="p-header__header-name profile"><i class="fa-solid fa-arrow-left"></i>戻る</div>
+    </div>
+  </a>
   <div class="flex h-screen bg-gray-50" :class="{ 'overflow-hidden': isSideMenuOpen}">
     <div class="">
       <table class="w-3/4 text-sm text-left text-gray-500 dark:text-gray-400 mx-auto my-28 table">

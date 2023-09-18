@@ -1,5 +1,25 @@
+
+@media screen and (min-width: 480px) {
+    /* html要素にはdisplay:blockを指定する必要はありません */
+    html{
+        height: 700px;
+    }
+    .container {
+        display: flex; /* displayをflexに変更 */
+        margin: 0 auto;
+        align-items: center;
+        
+        width: 456px; /* 画面の幅いっぱいに表示 */
+        background-color: lightblue;
+    }
+}
+    
+
+
+
 body {
     overflow: hidden;
+    padding-bottom: 100px;
 }
 
 /* ヘッダー */
@@ -143,7 +163,7 @@ header {
     top: 0;
     right: 0;
     width: 80vw;
-    height: 100vh;
+    height: 150vh;
     background: #fff;
     padding: 32px 12px;
     z-index: 1000;

@@ -6,6 +6,8 @@ $posts = $pdo->query($sql)->fetchAll();
 
 ?>
 
+
+
 <!-- イントロページ作成場所 フロント -->
 <!DOCTYPE html>
 <html>
@@ -28,10 +30,12 @@ $posts = $pdo->query($sql)->fetchAll();
 <body>
   <!-- ヘッダー -->
 
+
   <?php
 
   include("../components/header.php"); ?>
   <main>
+    <div class="container">
     <!-- 3, 4期生の入室状態確認機能 イントロページver -->
     <section class="upbar-section">
       <!-- 上のナビゲーション -->
@@ -121,7 +125,9 @@ $posts = $pdo->query($sql)->fetchAll();
         <div id="calendar"></div>
       </div>
     </section>
+    </div>
   </main>
+
 </body>
 
 <script>

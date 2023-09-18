@@ -13,6 +13,9 @@ const headerStatus = document.getElementById('js-header_status');
 // テキスト
 const headerText = document.getElementById('js-header_statusText');
 
+// アンカーの取得
+const animetionAnchor = document.getElementById('js-anchor_animation')
+
 // アンカーの下のボタン
 text.addEventListener('click', () => {
     console.log('clicked');
@@ -22,4 +25,7 @@ text.addEventListener('click', () => {
     const newStatus = headerText.classList.toggle('active') ? '入室中' : '退室中';
     headerText.textContent = newStatus;
     headerStatus.classList.toggle('active');
+    // アンカー
+    // 入室するボタン→アンカー落下
+    animetionAnchor.classList.toggle('active');
 });

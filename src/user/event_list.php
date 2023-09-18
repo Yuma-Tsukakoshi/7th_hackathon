@@ -29,19 +29,13 @@ $posts = $pdo->query($sql)->fetchAll();
       <div class="mb-4 flex items-center justify-between border-t border-b py-4">
         <div class="flex flex-col gap-0.5">
           <span class="block font-bold lg:text-3xl"><?= $post['title'] ?></span>
-
-
-
           <span class="block text-sm text-gray-500"><?= $post['date'] ?></span>
           <span class="block text-sm text-gray-500"><?= substr($post["start_time"], 0, 5); ?>〜<?= substr($post["end_time"], 0, 5); ?></span>
           <span class="block text-sm text-gray-500"></span>
         </div>
         <p><?= $post['kisei'] ?></p>
-        <p><?= $post['name'] ?></p>
-        <p><?= $post['description'] ?></p>
-        <form action="">
+        <a href="../event/event_info/event_disp.php?id=<?= $post['id']?>" class="inline-block rounded-lg border bg-white px-4 py-2 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-100 focus-visible:ring active:bg-gray-200 md:px-8 md:py-3 md:text-base">詳細</a>
           <a href="../event/event_info/event_delete.php?id=<?= $post['relation_id'] ?>" class="inline-block rounded-lg border bg-white px-4 py-2 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-100 focus-visible:ring active:bg-gray-200 md:px-8 md:py-3 md:text-base">キャンセル</a>
-        </form>
       </div>
 
 

@@ -35,17 +35,16 @@ header {
 
 .p-header__logos {
     display: flex;
-    width: 200px;
 }
 
 .p-header__mark {
-    width: 90px;
+    width: 75px;
     height: 75px;
 }
 
 .p-header__website-name {
-    width: 150px;
     height: 75px;
+    width: 75px;
 }
 
 /* ヘッダーの入退室のステータス */
